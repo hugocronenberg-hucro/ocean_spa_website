@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allgemeine Geschäftsbedingungen (AGB) | Ocean Spa Whirlpools</title>
+    <meta name="description" content="Allgemeine Geschäftsbedingungen der Ocean Spa Whirlpools. Informationen zu Vertragsschluss, Lieferung, Zahlung, Gewährleistung und mehr.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/bpi0zni.css">
+    <style>
+        :root {
+            --accent: #5BA8A2;
+            --accent-light: #C0E3E0;
+            --dark: #1A1A2E;
+            --dark-soft: #2D2D44;
+            --white: #FFFFFF;
+            --off-white: #F7F8FA;
+            --gray: #9CA3AF;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --gradient-accent: linear-gradient(135deg, #5BA8A2 0%, #C0E3E0 50%, #5BA8A2 100%);
+            --gradient-soft: linear-gradient(180deg, #F7F8FA 0%, #ECEEF1 100%);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            padding-top: calc(20px + env(safe-area-inset-top, 0px));
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav.menu-open {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            padding-top: calc(12px + env(safe-area-inset-top, 0px));
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo-icon {
+            height: 44px;
+            width: auto;
+        }
+        .nav-logo-icon.color { display: none; }
+        .nav-logo-icon.white { display: block; }
+        
+        .nav-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+        .nav-logo-text span {
+            color: var(--accent);
+        }
+
+
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            transition: transform 0.3s, box-shadow 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-accent);
+            background: var(--accent-dark);
+            color: var(--white) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ── Page Hero ── */
+        .page-hero {
+            background: var(--off-white);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(91, 168, 162, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(91, 168, 162, 0.3), transparent);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--gray);
+        }
+
+        .breadcrumb .current {
+            color: var(--text-secondary);
+        }
+
+        .page-hero h1 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: clamp(32px, 5vw, 52px);
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .page-hero-subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        /* ── Article Body ── */
+        .article-body {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .article-body h2 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 28px;
+            color: var(--text-primary);
+            margin: 48px 0 20px;
+            line-height: 1.3;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 22px;
+            color: var(--text-primary);
+            margin: 36px 0 16px;
+            line-height: 1.4;
+        }
+
+        .article-body p {
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .article-body ul, .article-body ol {
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+
+        .article-body li {
+            margin-bottom: 8px;
+        }
+
+        .article-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .article-body a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .article-body a:hover {
+            color: var(--accent-light);
+            text-decoration: underline;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-accent);
+            border: none;
+            margin: 48px 0;
+        }
+
+        .legal-section {
+            margin-bottom: 16px;
+        }
+
+        .legal-section h2 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .legal-section h2 .section-number {
+            color: var(--accent);
+            font-family: 'all-round-gothic', sans-serif;
+        }
+
+        .legal-intro {
+            background: var(--off-white);
+            border-left: 4px solid var(--accent);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 40px;
+        }
+
+        .legal-intro p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .legal-intro p + p {
+            margin-top: 12px;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: rgba(91, 168, 162, 0.12);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-bottom: 32px;
+            border: 1px solid rgba(91, 168, 162, 0.2);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--off-white);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--gray-light);
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-logo img {
+            height: 36px;
+            width: auto;
+        }
+        .footer-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .footer-logo-text span { color: var(--accent); }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 0;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom span {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* ── Scroll Reveal ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray-light);
+            }
+            .mobile-toggle { display: flex; }
+
+            .page-hero {
+                padding: 130px 0 60px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .article-body {
+                padding: 40px 20px 60px;
+            }
+
+            .article-body h2 {
+                font-size: 24px;
+            }
+
+            .article-body h3 {
+                font-size: 20px;
+            }
+
+            .legal-intro {
+                padding: 20px;
+            }
+
+            .footer-links {
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><div class="nav-logo-text">Ocean <span>Spa</span></div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="produkt.html">Setho 505</a></li>
+                    <li><a href="blog.html">Ratgeber</a></li>
+                    <li><a href="index.html#kundenstimmen">Kundenstimmen</a></li>
+                    <li><a href="index.html#kontakt" class="nav-cta">Beratung anfragen</a></li>
+                </ul>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Startseite</a>
+                <span>/</span>
+                <span class="current">AGB</span>
+            </div>
+            <h1>Allgemeine Gesch&auml;ftsbedingungen</h1>
+            <p class="page-hero-subtitle">Die nachfolgenden Allgemeinen Gesch&auml;ftsbedingungen regeln das Vertragsverh&auml;ltnis zwischen Ocean Spa Whirlpools und unseren Kunden.</p>
+        </div>
+    </section>
+
+    <!-- AGB Content -->
+    <article class="article-body">
+
+        <div class="last-updated reveal">Stand: Januar 2025</div>
+
+        <div class="legal-intro reveal">
+            <p><strong>Ocean Spa Whirlpools</strong><br>
+            [Ihre Adresse]<br>
+            E-Mail: [Ihre E-Mail]<br>
+            Web: oceanspa-whirlpools.de</p>
+        </div>
+
+        <!-- §1 Geltungsbereich -->
+        <div class="legal-section reveal">
+            <h2><span class="section-number">&sect;1</span> Geltungsbereich</h2>
+            <p>(1) Diese Allgemeinen Gesch&auml;ftsbedingungen (nachfolgend &bdquo;AGB&ldquo;) gelten f&uuml;r alle Vertr&auml;ge, die zwischen Ocean Spa Whirlpools (nachfolgend &bdquo;Verk&auml;ufer&ldquo;) und dem Kunden (nachfolgend &bdquo;K&auml;ufer&ldquo;) &uuml;ber den Online-Shop auf oceanspa-whirlpools.de geschlossen werden.</p>
+            <p>(2) Die AGB gelten in der zum Zeitpunkt der Bestellung g&uuml;ltigen Fassung. Abweichende Bedingungen des K&auml;ufers werden nicht anerkannt, es sei denn, der Verk&auml;ufer stimmt deren Geltung ausdr&uuml;cklich schriftlich zu.</p>
+            <p>(3) Verbraucher im Sinne dieser AGB ist jede nat&uuml;rliche Person, die ein Rechtsgesch&auml;ft zu Zwecken abschlie&szlig;t, die &uuml;berwiegend weder ihrer gewerblichen noch ihrer selbstst&auml;ndigen beruflichen T&auml;tigkeit zugerechnet werden k&ouml;nnen (&sect; 13 BGB).</p>
+            <p>(4) Unternehmer im Sinne dieser AGB ist eine nat&uuml;rliche oder juristische Person oder eine rechtsf&auml;hige Personengesellschaft, die bei Abschluss eines Rechtsgesch&auml;fts in Aus&uuml;bung ihrer gewerblichen oder selbstst&auml;ndigen beruflichen T&auml;tigkeit handelt (&sect; 14 Abs. 1 BGB).</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- §2 Vertragsschluss -->
+        <div class="legal-section reveal">
+            <h2><span class="section-number">&sect;2</span> Vertragsschluss</h2>
+            <p>(1) Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern eine Aufforderung zur Abgabe einer Bestellung (invitatio ad offerendum) dar.</p>
+            <p>(2) Durch Anklicken des Buttons &bdquo;Zahlungspflichtig bestellen&ldquo; gibt der K&auml;ufer ein verbindliches Kaufangebot ab. Der Verk&auml;ufer best&auml;tigt den Eingang der Bestellung unverz&uuml;glich per automatisierter E-Mail (Bestelleingangsbestätigung). Diese Best&auml;tigung stellt noch keine Annahme des Angebots dar.</p>
+            <p>(3) Der Vertrag kommt zustande, wenn der Verk&auml;ufer das Angebot des K&auml;ufers durch eine ausdr&uuml;ckliche Annahmeerkl&auml;rung (Auftragsbest&auml;tigung) per E-Mail annimmt oder die bestellte Ware versendet.</p>
+            <p>(4) Gibt der K&auml;ufer die Bestellung auf elektronischem Wege ab, wird der Vertragstext vom Verk&auml;ufer gespeichert und dem K&auml;ufer zusammen mit den vorliegenden AGB und den Kundeninformationen in Textform (z.&thinsp;B. per E-Mail) zugesendet.</p>
+            <p>(5) Vor Absendung der Bestellung kann der K&auml;ufer seine Eingaben &uuml;ber die &uuml;blichen Tastatur- und Mausfunktionen &auml;ndern und korrigieren. Vertragssprache ist Deutsch.</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- §3 Preise und Zahlung -->
+        <div class="legal-section reveal">
+            <h2><span class="section-number">&sect;3</span> Preise und Zahlung</h2>
+            <p>(1) Alle angegebenen Preise sind Endpreise und enthalten die gesetzliche Umsatzsteuer. Etwaige zus&auml;tzliche Liefer- und Versandkosten werden gesondert in der jeweiligen Produktbeschreibung sowie im Bestellvorgang ausgewiesen.</p>
+            <p>(2) Bei Lieferungen innerhalb Deutschlands stehen dem K&auml;ufer folgende Zahlungsm&ouml;glichkeiten zur Verf&uuml;gung:</p>
+            <ul>
+                <li>Vorkasse per Bank&uuml;berweisung</li>
+                <li>Zahlung per PayPal</li>
+                <li>Zahlung per Kreditkarte (Visa, Mastercard)</li>
+                <li>Ratenzahlung (vorbehaltlich Bonit&auml;tspr&uuml;fung)</li>
+            </ul>
+            <p>(3) Bei Wahl der Zahlungsart Vorkasse nennt der Verk&auml;ufer dem K&auml;ufer seine Bankverbindung in der Auftragsbest&auml;tigung. Der Rechnungsbetrag ist innerhalb von 7 Tagen nach Vertragsschluss zu &uuml;berweisen.</p>
+            <p>(4) Bei hochwertigen Produkten wie Premium-Whirlpools beh&auml;lt sich der Verk&auml;ufer vor, eine Anzahlung in H&ouml;he von bis zu 30 % des Kaufpreises bei Vertragsschluss zu verlangen. Der Restbetrag ist vor Auslieferung f&auml;llig.</p>
+            <p>(5) Kommt der K&auml;ufer in Zahlungsverzug, ist der Verk&auml;ufer berechtigt, Verzugszinsen in gesetzlicher H&ouml;he zu verlangen (&sect; 288 BGB).</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- §4 Lieferung und Versand -->
+        <div class="legal-section reveal">
+            <h2><span class="section-number">&sect;4</span> Lieferung und Versand</h2>
+            <p>(1) Die Lieferung erfolgt innerhalb Deutschlands und, soweit im Angebot angegeben, auch in weitere europ&auml;ische L&auml;nder. Lieferadresse ist die vom K&auml;ufer im Bestellvorgang angegebene Adresse.</p>
+            <p>(2) Die voraussichtliche Lieferzeit wird in der jeweiligen Produktbeschreibung angegeben. Bei Whirlpools betr&auml;gt die Lieferzeit in der Regel 4 bis 8 Wochen ab Zahlungseingang, sofern im Angebot keine abweichende Frist genannt ist. Der Verk&auml;ufer informiert den K&auml;ufer rechtzeitig &uuml;ber den voraussichtlichen Liefertermin.</p>
+            <p>(3) Die Lieferung von Whirlpools erfolgt per Spedition frei Bordsteinkante. Der Verk&auml;ufer koordiniert den Liefertermin mit dem K&auml;ufer. Ein Einbringungs- und Aufstellservice kann gegen gesonderte Verg&uuml;tung vereinbart werden.</p>
+            <p>(4) Der K&auml;ufer ist verpflichtet, die Ware bei Anlieferung unverz&uuml;glich auf Transportsch&auml;den zu untersuchen und etwaige M&auml;ngel dem Spediteur und dem Verk&auml;ufer unverz&uuml;glich mitzuteilen. Die Unterlassung hat keinen Einfluss auf die gesetzlichen Gew&auml;hrleistungsanspr&uuml;che des K&auml;ufers.</p>
+            <p>(5) Ist die Zustellung zum vereinbarten Termin nicht m&ouml;glich, weil der K&auml;ufer nicht erreichbar ist, tr&auml;gt der K&auml;ufer die Kosten f&uuml;r eine erneute Anlieferung.</p>
+            <p>(6) Die Gefahr des zuf&auml;lligen Untergangs und der zuf&auml;lligen Verschlechterung der verkauften Sache geht bei Verbrauchern mit der &Uuml;bergabe der Sache an den K&auml;ufer &uuml;ber.</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- §5 Eigentumsvorbehalt -->
+        <div class="legal-section reveal">
+            <h2><span class="section-number">&sect;5</span> Eigentumsvorbehalt</h2>
+            <p>(1) Die gelieferte Ware bleibt bis zur vollst&auml;ndigen Bezahlung des Kaufpreises einschlie&szlig;lich aller Nebenforderungen Eigentum des Verk&auml;ufers.</p>
+            <p>(2) Der K&auml;ufer ist verpflichtet, die Vorbehaltsware pfleglich zu behandeln. Insbesondere ist er verpflichtet, diese auf eigene Kosten gegen Feuer-, Wasser- und Diebstahlsch&auml;den ausreichend zum Neuwert zu versichern.</p>
+            <p>(3) Bei Pfändungen oder sonstigen Eingriffen Dritter hat der K&auml;ufer den Verk&auml;ufer unverz&uuml;glich schriftlich zu benachrichtigen, damit der Verk&auml;ufer Klage gem&auml;&szlig; &sect; 771 ZPO erheben kann.</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- §6 Gewährleistung und Haftung -->
+        <div class="legal-section reveal">
+            <h2><span class="section-number">&sect;6</span> Gew&auml;hrleistung und Haftung</h2>
+            <p>(1) Es gelten die gesetzlichen Gew&auml;hrleistungsrechte. Die Gew&auml;hrleistungsfrist f&uuml;r Verbraucher betr&auml;gt zwei Jahre ab &Uuml;bergabe der Ware.</p>
+            <p>(2) Der Verk&auml;ufer haftet unbeschr&auml;nkt f&uuml;r Sch&auml;den aus der Verletzung des Lebens, des K&ouml;rpers oder der Gesundheit, die auf einer vors&auml;tzlichen oder fahrl&auml;ssigen Pflichtverletzung des Verk&auml;ufers oder seiner Erf&uuml;llungsgehilfen beruhen.</p>
+            <p>(3) F&uuml;r sonstige Sch&auml;den haftet der Verk&auml;ufer nur bei Vorsatz und grober Fahrl&auml;ssigkeit sowie bei der schuldhaften Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Im Falle der Verletzung wesentlicher Vertragspflichten durch einfache Fahrl&auml;ssigkeit ist die Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt.</p>
+            <p>(4) Liegt der Mangel in einem Fehler der Ware, wird der Verk&auml;ufer nach seiner Wahl zun&auml;chst Nachbesserung oder Ersatzlieferung leisten. Schl&auml;gt die Nacherf&uuml;llung fehl, kann der K&auml;ufer nach seiner Wahl Minderung des Kaufpreises oder R&uuml;cktritt vom Vertrag verlangen.</p>
+            <p>(5) Offensichtliche Produktabweichungen in Farbe, Form oder Oberfl&auml;chenstruktur, die aus der Natur des verwendeten Materials resultieren (z.&thinsp;B. Acryl, Holz), stellen keinen Mangel dar, sofern sie sich im branchenüblichen Rahmen bewegen.</p>
+            <p>(6) Die Haftung nach dem Produkthaftungsgesetz bleibt unber&uuml;hrt.</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- §7 Widerrufsrecht -->
+        <div class="legal-section reveal">
+            <h2><span class="section-number">&sect;7</span> Widerrufsrecht</h2>
+            <p>(1) Verbraucher haben bei Fernabsatzvertr&auml;gen grunds&auml;tzlich ein gesetzliches Widerrufsrecht. &Uuml;ber die Einzelheiten des Widerrufsrechts, insbesondere &uuml;ber die Voraussetzungen, Fristen und das Verfahren, informiert der Verk&auml;ufer in seiner <a href="widerrufsbelehrung.html">Widerrufsbelehrung</a>.</p>
+            <p>(2) Das Widerrufsrecht besteht nicht bei Vertr&auml;gen zur Lieferung von Waren, die nach Kundenspezifikation angefertigt werden oder eindeutig auf die pers&ouml;nlichen Bed&uuml;rfnisse zugeschnitten sind (&sect; 312g Abs. 2 Nr. 1 BGB).</p>
+            <p>(3) Weitere Informationen zum Widerrufsrecht entnehmen Sie bitte unserer ausf&uuml;hrlichen <a href="widerrufsbelehrung.html">Widerrufsbelehrung</a>.</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- §8 Datenschutz -->
+        <div class="legal-section reveal">
+            <h2><span class="section-number">&sect;8</span> Datenschutz</h2>
+            <p>(1) Der Verk&auml;ufer erhebt, verarbeitet und nutzt personenbezogene Daten des K&auml;ufers nur im gesetzlich zul&auml;ssigen Rahmen und soweit dies f&uuml;r die Vertragsbegr&uuml;ndung, inhaltliche Ausgestaltung, &Auml;nderung oder Beendigung des Vertragsverh&auml;ltnisses erforderlich ist (Bestandsdaten).</p>
+            <p>(2) Ausf&uuml;hrliche Informationen zum Umgang mit personenbezogenen Daten, insbesondere &uuml;ber Art, Umfang und Zweck der Datenverarbeitung, finden Sie in unserer <a href="datenschutz.html">Datenschutzerkl&auml;rung</a>.</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- §9 Schlussbestimmungen -->
+        <div class="legal-section reveal">
+            <h2><span class="section-number">&sect;9</span> Schlussbestimmungen</h2>
+            <p>(1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG). Bei Verbrauchern gilt diese Rechtswahl nur insoweit, als nicht der durch zwingende Bestimmungen des Rechts des Staates, in dem der Verbraucher seinen gew&ouml;hnlichen Aufenthalt hat, gew&auml;hrte Schutz entzogen wird.</p>
+            <p>(2) Ist der K&auml;ufer Kaufmann, juristische Person des &ouml;ffentlichen Rechts oder &ouml;ffentlich-rechtliches Sonderverm&ouml;gen, ist ausschlie&szlig;licher Gerichtsstand f&uuml;r alle Streitigkeiten aus diesem Vertrag der Gesch&auml;ftssitz des Verk&auml;ufers.</p>
+            <p>(3) Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die Sie unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a> finden. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit.</p>
+            <p>(4) Sollte eine Bestimmung dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der &uuml;brigen Bestimmungen davon unber&uuml;hrt. Anstelle der unwirksamen Bestimmung gilt die gesetzliche Regelung.</p>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">Ocean <span>Spa</span></div>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="widerrufsbelehrung.html">Widerrufsbelehrung</a></li>
+                    <li><a href="agb.html">AGB</a></li>
+                    <li><a href="ueber-uns.html">&Uuml;ber uns</a></li>
+                    <li><a href="index.html#kontakt">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 Ocean Spa Whirlpools. Alle Rechte vorbehalten.</span>
+                <span>Setho 505 &ndash; Luxus ohne Kompromisse</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        });
+        // Start scrolled since hero is dark
+        nav.classList.add('scrolled');
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navEl = document.querySelector('.nav');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            navEl.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                navEl.classList.remove('menu-open');
+            });
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+    <script src="cookie-banner.js"></script>
+</body>
+</html>

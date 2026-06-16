@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Ocean Spa Whirlpools</title>
+    <meta name="description" content="Impressum und rechtliche Angaben von Ocean Spa Whirlpools. Angaben gemäß §5 TMG.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/bpi0zni.css">
+    <style>
+        :root {
+            --accent: #5BA8A2;
+            --accent-light: #C0E3E0;
+            --dark: #1A1A2E;
+            --dark-soft: #2D2D44;
+            --white: #FFFFFF;
+            --off-white: #F7F8FA;
+            --gray: #9CA3AF;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --gradient-accent: linear-gradient(135deg, #5BA8A2 0%, #C0E3E0 50%, #5BA8A2 100%);
+            --gradient-soft: linear-gradient(180deg, #F7F8FA 0%, #ECEEF1 100%);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            padding-top: calc(20px + env(safe-area-inset-top, 0px));
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav.menu-open {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            padding-top: calc(12px + env(safe-area-inset-top, 0px));
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo-icon {
+            height: 44px;
+            width: auto;
+        }
+        .nav-logo-icon.color { display: none; }
+        .nav-logo-icon.white { display: block; }
+        
+        .nav-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+        .nav-logo-text span {
+            color: var(--accent);
+        }
+
+
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            transition: transform 0.3s, box-shadow 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-accent);
+            background: var(--accent-dark);
+            color: var(--white) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ── Page Hero ── */
+        .page-hero {
+            background: var(--off-white);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(91, 168, 162, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(91, 168, 162, 0.3), transparent);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--gray);
+        }
+
+        .breadcrumb .current {
+            color: var(--text-secondary);
+        }
+
+        .page-hero h1 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: clamp(32px, 5vw, 52px);
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 16px;
+            max-width: 800px;
+        }
+
+        .page-hero-subtitle {
+            color: var(--gray);
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        /* ── Gold decorative line ── */
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+            margin-bottom: 24px;
+        }
+
+        /* ── Article Body / Content ── */
+        .article-body {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .article-body h2 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 28px;
+            color: var(--text-primary);
+            margin: 48px 0 20px;
+            line-height: 1.3;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 22px;
+            color: var(--text-primary);
+            margin: 36px 0 16px;
+            line-height: 1.4;
+        }
+
+        .article-body p {
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .article-body ul, .article-body ol {
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+
+        .article-body li {
+            margin-bottom: 8px;
+        }
+
+        .article-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .article-body a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(91, 168, 162, 0.3);
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .article-body a:hover {
+            color: #b8963f;
+            border-bottom-color: var(--accent);
+        }
+
+        .legal-section {
+            margin-bottom: 40px;
+        }
+
+        .legal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-address {
+            font-style: normal;
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        .legal-address .company-name {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 17px;
+        }
+
+        .legal-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent), rgba(91, 168, 162, 0.15), transparent);
+            margin: 48px 0;
+            border: none;
+        }
+
+        .placeholder {
+            color: var(--accent);
+            font-weight: 500;
+            background: rgba(91, 168, 162, 0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--off-white);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--gray-light);
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-logo img {
+            height: 36px;
+            width: auto;
+        }
+        .footer-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .footer-logo-text span { color: var(--accent); }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 0;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom span {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* ── Scroll Reveal ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray-light);
+            }
+            .mobile-toggle { display: flex; }
+
+            .page-hero {
+                padding: 130px 0 60px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .article-body {
+                padding: 40px 20px 60px;
+            }
+
+            .article-body h2 {
+                font-size: 24px;
+            }
+
+            .article-body h3 {
+                font-size: 20px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-links {
+                gap: 16px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><div class="nav-logo-text">Ocean <span>Spa</span></div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="produkt.html">Setho 505</a></li>
+                    <li><a href="blog.html">Ratgeber</a></li>
+                    <li><a href="index.html#kundenstimmen">Kundenstimmen</a></li>
+                    <li><a href="index.html#kontakt" class="nav-cta">Beratung anfragen</a></li>
+                </ul>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Startseite</a>
+                <span>/</span>
+                <span class="current">Impressum</span>
+            </div>
+            <div class="gold-line"></div>
+            <h1>Impressum</h1>
+            <p class="page-hero-subtitle">Rechtliche Angaben und Pflichtinformationen nach deutschem Recht.</p>
+        </div>
+    </section>
+
+    <!-- Content Body -->
+    <article class="article-body">
+
+        <!-- Angaben gemaess 5 TMG -->
+        <div class="legal-section reveal">
+            <h2>Angaben gem&auml;&szlig; &sect;5 TMG</h2>
+            <address class="legal-address">
+                <span class="company-name">Ocean Spa Whirlpools</span><br>
+                <span class="placeholder">[Vor- und Nachname des Inhabers]</span><br>
+                <span class="placeholder">[Stra&szlig;e Hausnummer]</span><br>
+                <span class="placeholder">[PLZ Ort]</span>
+            </address>
+        </div>
+
+        <hr class="legal-divider">
+
+        <!-- Kontakt -->
+        <div class="legal-section reveal">
+            <h2>Kontakt</h2>
+            <p>
+                Telefon: <span class="placeholder">[Telefonnummer]</span><br>
+                E-Mail: <span class="placeholder">[E-Mail-Adresse]</span>
+            </p>
+        </div>
+
+        <hr class="legal-divider">
+
+        <!-- Umsatzsteuer-ID -->
+        <div class="legal-section reveal">
+            <h2>Umsatzsteuer-ID</h2>
+            <p>Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect;27a Umsatzsteuergesetz:</p>
+            <p><span class="placeholder">[USt-IdNr.]</span></p>
+        </div>
+
+        <hr class="legal-divider">
+
+        <!-- Verantwortlich fuer den Inhalt -->
+        <div class="legal-section reveal">
+            <h2>Verantwortlich f&uuml;r den Inhalt nach &sect;55 Abs. 2 RStV</h2>
+            <address class="legal-address">
+                <span class="placeholder">[Vor- und Nachname des Inhabers]</span><br>
+                <span class="placeholder">[Stra&szlig;e Hausnummer]</span><br>
+                <span class="placeholder">[PLZ Ort]</span>
+            </address>
+        </div>
+
+        <hr class="legal-divider">
+
+        <!-- Streitschlichtung -->
+        <div class="legal-section reveal">
+            <h2>Streitschlichtung</h2>
+            <p>Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a></p>
+            <p>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        </div>
+
+        <hr class="legal-divider">
+
+        <!-- Haftung fuer Inhalte -->
+        <div class="legal-section reveal">
+            <h2>Haftung f&uuml;r Inhalte</h2>
+            <p>Als Diensteanbieter sind wir gem&auml;&szlig; &sect;7 Abs. 1 TMG f&uuml;r eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach &sect;&sect;8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, &uuml;bermittelte oder gespeicherte fremde Informationen zu &uuml;berwachen oder nach Umst&auml;nden zu forschen, die auf eine rechtswidrige T&auml;tigkeit hinweisen.</p>
+            <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unber&uuml;hrt. Eine diesbez&uuml;gliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung m&ouml;glich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+        </div>
+
+        <hr class="legal-divider">
+
+        <!-- Haftung fuer Links -->
+        <div class="legal-section reveal">
+            <h2>Haftung f&uuml;r Links</h2>
+            <p>Unser Angebot enth&auml;lt Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb k&ouml;nnen wir f&uuml;r diese fremden Inhalte auch keine Gew&auml;hr &uuml;bernehmen. F&uuml;r die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf m&ouml;gliche Rechtsverst&ouml;&szlig;e &uuml;berpr&uuml;ft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+            <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+        </div>
+
+        <hr class="legal-divider">
+
+        <!-- Urheberrecht -->
+        <div class="legal-section reveal">
+            <h2>Urheberrecht</h2>
+            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielf&auml;ltigung, Bearbeitung, Verbreitung und jede Art der Verwertung au&szlig;erhalb der Grenzen des Urheberrechtes bed&uuml;rfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur f&uuml;r den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+            <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">Ocean <span>Spa</span></div>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="widerrufsbelehrung.html">Widerrufsbelehrung</a></li>
+                    <li><a href="agb.html">AGB</a></li>
+                    <li><a href="ueber-uns.html">&Uuml;ber uns</a></li>
+                    <li><a href="index.html#kontakt">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 Ocean Spa Whirlpools. Alle Rechte vorbehalten.</span>
+                <span>Setho 505 &ndash; Luxus ohne Kompromisse</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        });
+        // Start scrolled since hero is dark
+        nav.classList.add('scrolled');
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navEl = document.querySelector('.nav');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            navEl.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                navEl.classList.remove('menu-open');
+            });
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+    <script src="cookie-banner.js"></script>
+</body>
+</html>

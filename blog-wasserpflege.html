@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der ultimative Leitfaden zur Whirlpool-Wasserpflege | Ocean Spa</title>
+    <meta name="description" content="Alles zur Whirlpool-Wasserpflege: pH-Wert, Desinfektion, Filterreinigung und mehr. Der komplette Leitfaden von Ocean Spa.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/bpi0zni.css">
+    <style>
+        :root {
+            --accent: #5BA8A2;
+            --accent-light: #C0E3E0;
+            --dark: #1A1A2E;
+            --dark-soft: #2D2D44;
+            --white: #FFFFFF;
+            --off-white: #F7F8FA;
+            --gray: #9CA3AF;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --gradient-accent: linear-gradient(135deg, #5BA8A2 0%, #C0E3E0 50%, #5BA8A2 100%);
+            --gradient-soft: linear-gradient(180deg, #F7F8FA 0%, #ECEEF1 100%);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            padding-top: calc(20px + env(safe-area-inset-top, 0px));
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav.menu-open {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            padding-top: calc(12px + env(safe-area-inset-top, 0px));
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo-icon {
+            height: 44px;
+            width: auto;
+        }
+        .nav-logo-icon.color { display: none; }
+        .nav-logo-icon.white { display: block; }
+        
+        .nav-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+        .nav-logo-text span {
+            color: var(--accent);
+        }
+
+
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            transition: transform 0.3s, box-shadow 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-accent);
+            background: var(--accent-dark);
+            color: var(--white) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ── Article Hero ── */
+        .article-hero {
+            background: var(--off-white);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(91, 168, 162, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(91, 168, 162, 0.3), transparent);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--gray);
+        }
+
+        .breadcrumb .current {
+            color: var(--text-secondary);
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(91, 168, 162, 0.15);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(91, 168, 162, 0.2);
+        }
+
+        .article-hero h1 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: clamp(32px, 5vw, 52px);
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            max-width: 800px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .article-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .article-meta-item svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .article-intro {
+            color: var(--text-secondary);
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+
+        /* ── Article Body ── */
+        .article-body {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .article-body h2 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 28px;
+            color: var(--text-primary);
+            margin: 48px 0 20px;
+            line-height: 1.3;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 22px;
+            color: var(--text-primary);
+            margin: 36px 0 16px;
+            line-height: 1.4;
+        }
+
+        .article-body p {
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .article-body ul, .article-body ol {
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+
+        .article-body li {
+            margin-bottom: 8px;
+        }
+
+        .article-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: var(--off-white);
+            border-left: 4px solid var(--accent);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 32px 0;
+        }
+
+        .info-box.tip {
+            background: rgba(91, 168, 162, 0.08);
+            border-left-color: var(--accent);
+        }
+
+        .info-box.warning {
+            background: #FFF8F0;
+            border-left-color: #E8913A;
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .article-body img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+
+        /* ── CTA Banner ── */
+        .cta-banner {
+            background: var(--off-white);
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+            margin: 60px auto;
+            max-width: 780px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(91, 168, 162, 0.1) 0%, transparent 60%);
+        }
+
+        .cta-banner h3 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 28px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .cta-banner p {
+            color: var(--gray);
+            font-size: 16px;
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(91,168,162,0.3);
+            background: var(--accent-dark);
+        }
+
+        /* ── Related Articles ── */
+        .related-section {
+            background: var(--off-white);
+            padding: 80px 0;
+        }
+
+        .related-section h2 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--text-primary);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .related-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .related-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-card-img {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        .related-card-img img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+        }
+
+        
+
+        .related-card-body {
+            padding: 24px;
+        }
+
+        .related-card-category {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
+        .related-card-title {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 18px;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .related-card-excerpt {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--off-white);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--gray-light);
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-logo img {
+            height: 36px;
+            width: auto;
+        }
+        .footer-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .footer-logo-text span { color: var(--accent); }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 0;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom span {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* ── Scroll Reveal ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray-light);
+            }
+            .mobile-toggle { display: flex; }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .article-hero {
+                padding: 130px 0 60px;
+            }
+
+            .cta-banner {
+                padding: 36px 24px;
+                margin: 40px 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .article-body {
+                padding: 40px 20px 60px;
+            }
+
+            .article-body h2 {
+                font-size: 24px;
+            }
+
+            .article-body h3 {
+                font-size: 20px;
+            }
+
+            .info-box {
+                padding: 20px;
+            }
+
+            .article-meta {
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><div class="nav-logo-text">Ocean <span>Spa</span></div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="produkt.html">Setho 505</a></li>
+                    <li><a href="blog.html" style="color:var(--accent)">Ratgeber</a></li>
+                    <li><a href="index.html#kundenstimmen">Kundenstimmen</a></li>
+                    <li><a href="index.html#kontakt" class="nav-cta">Beratung anfragen</a></li>
+                </ul>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Hero -->
+    <section class="article-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="blog.html">Ratgeber</a>
+                <span>/</span>
+                <span class="current">Wasserpflege</span>
+            </div>
+            <div class="article-category">Wasserpflege</div>
+            <h1>Der ultimative Leitfaden zur Whirlpool-Wasserpflege</h1>
+            <div class="article-meta">
+                <div class="article-meta-item">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    15. Januar 2025
+                </div>
+                <div class="article-meta-item">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    8 Min. Lesezeit
+                </div>
+                <div class="article-meta-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    Wasserpflege
+                </div>
+            </div>
+            <p class="article-intro">
+                Kristallklares, hygienisch einwandfreies Wasser ist das Herzstück jedes Whirlpool-Erlebnisses. In diesem umfassenden Leitfaden erfahren Sie alles, was Sie zur professionellen Wasserpflege wissen müssen &ndash; von der Grundlagen-Chemie bis zur wöchentlichen Routine.
+            </p>
+        </div>
+    </section>
+
+    <!-- Article Body -->
+    <article class="article-body">
+
+        <h2 class="reveal">Warum Wasserpflege so wichtig ist</h2>
+        <p class="reveal">Die Wasserpflege in einem Whirlpool unterscheidet sich grundlegend von der Pflege eines herkömmlichen Schwimmbeckens. Das warme Wasser mit Temperaturen zwischen 35 und 40 Grad Celsius, die Verwirbelung durch zahlreiche Düsen und das vergleichsweise kleine Wasservolumen schaffen ein Milieu, in dem sich Mikroorganismen bei mangelnder Pflege rasch vermehren können. Gleichzeitig gelangen durch die Nutzung Hautpartikel, Körperfette, Kosmetikreste und Schweiß ins Wasser, die als Nährboden für Bakterien dienen.</p>
+        <p class="reveal">Eine konsequente Wasserpflege schützt nicht nur Ihre Gesundheit, sondern verlängert auch die Lebensdauer Ihrer Acrylwanne, der Dichtungen und der technischen Komponenten erheblich. Kalkablagerungen, Biofilm und aggressive Wasserchemie können Pumpen, Heizungen und Rohrleitungen dauerhaft beschädigen. Mit dem richtigen Wissen und einer einfachen Routine halten Sie Ihr Wasser dauerhaft in perfektem Zustand.</p>
+
+        <h2 class="reveal">Die drei Säulen der Wasserchemie</h2>
+
+        <h3 class="reveal">1. pH-Wert: Die Grundlage für alles</h3>
+        <p class="reveal">Der pH-Wert ist der wichtigste Parameter Ihrer Wasserchemie. Er beschreibt, wie sauer oder basisch Ihr Wasser ist, und beeinflusst direkt, wie effektiv Ihr Desinfektionsmittel arbeitet. Der ideale pH-Wert für Whirlpoolwasser liegt zwischen <strong>7,2 und 7,8</strong>. In diesem Bereich arbeiten Chlor und Brom am effektivsten, das Wasser ist angenehm für Haut und Augen, und es bilden sich keine Kalkablagerungen.</p>
+        <p class="reveal">Messen Sie den pH-Wert mindestens zwei- bis dreimal pro Woche mit Teststreifen oder einem digitalen Messgerät. Ist der Wert zu hoch (über 7,8), verwenden Sie pH-Minus (Natriumhydrogensulfat). Ist er zu niedrig (unter 7,2), greifen Sie zu pH-Plus (Natriumcarbonat). Dosieren Sie dabei immer in kleinen Schritten und messen Sie nach 2 bis 4 Stunden Zirkulation erneut.</p>
+
+        <div class="info-box tip reveal">
+            <div class="info-box-title">&#128161; Praxis-Tipp</div>
+            <p>Korrigieren Sie immer zuerst den pH-Wert, bevor Sie Desinfektionsmittel hinzufügen. Bei einem pH-Wert von 8,0 verliert Chlor fast 75 % seiner Wirksamkeit. Ohne den richtigen pH-Wert verschwenden Sie also buchstäblich Ihre Chemikalien.</p>
+        </div>
+
+        <h3 class="reveal">2. Alkalinität: Der Puffer für stabile Werte</h3>
+        <p class="reveal">Die Gesamtalkalinität (TA-Wert) wirkt als Puffer und verhindert, dass Ihr pH-Wert unkontrolliert schwankt. Der ideale Bereich liegt zwischen <strong>80 und 120 mg/l</strong> (ppm). Ist die Alkalinität zu niedrig, wird der pH-Wert instabil und springt bereits bei kleinen Einflüssen auf und ab. Ist sie zu hoch, lässt sich der pH-Wert nur schwer senken, und das Wasser neigt zu Trübung und Kalkbildung.</p>
+        <p class="reveal">Prüfen Sie die Alkalinität einmal pro Woche. In der Praxis stellen Sie zuerst die Alkalinität ein und regulieren danach den pH-Wert. Zum Senken der Alkalinität verwenden Sie pH-Minus in kleinen Dosen, zum Erhöhen spezielles Alkalinity Increaser (Natriumbicarbonat).</p>
+
+        <h3 class="reveal">3. Desinfektion: Keime zuverlässig bekämpfen</h3>
+        <p class="reveal">Die Desinfektion eliminiert Bakterien, Viren und Algen aus Ihrem Whirlpoolwasser. Ihnen stehen mehrere Methoden zur Verfügung, die sich auch kombinieren lassen:</p>
+        <ul class="reveal">
+            <li><strong>Chlor (Dichlor-Granulat):</strong> Die weitverbreitetste und kostengünstigste Methode. Zielwert: 1,0 bis 3,0 mg/l. Wirkt schnell und zuverlässig, muss aber regelmäßig nachdosiert werden. Kann bei empfindlichen Personen Haut- und Augenreizungen verursachen.</li>
+            <li><strong>Brom:</strong> Arbeitet bei höheren Temperaturen stabiler als Chlor und hat einen geringeren Eigengeruch. Zielwert: 2,0 bis 4,0 mg/l. Ideal für Whirlpools, da es bei Temperaturen über 35 Grad wirksamer bleibt als Chlor.</li>
+            <li><strong>Aktivsauerstoff:</strong> Eine chlorfreie Alternative, die sanfter zur Haut ist. Erfordert allerdings ein zusätzliches Algizid und ist bei hoher Badefrequenz allein oft nicht ausreichend.</li>
+            <li><strong>UV-C-Desinfektion:</strong> Ultraviolettes Licht zerstört die DNA von Mikroorganismen beim Durchfließen der UV-C-Kammer. Besonders effektiv in Kombination mit einer reduzierten chemischen Desinfektion.</li>
+        </ul>
+
+        <div class="info-box reveal">
+            <div class="info-box-title">&#9889; Setho 505 UV-C Technologie</div>
+            <p>Der Setho 505 von Ocean Spa ist serienmäßig mit einem UV-C-Desinfektionssystem ausgestattet. Das UV-C-Licht neutralisiert bis zu 99,9 % aller Keime, während das Wasser die Kammer passiert. Dadurch können Sie den Einsatz von Chlor oder Brom um bis zu 50 % reduzieren. Das Ergebnis: Weniger Chemie, weniger Geruch, weniger Hautreizungen &ndash; und trotzdem hygienisch einwandfreies Wasser.</p>
+        </div>
+
+        <h2 class="reveal">Filterreinigung: Das Herzstück der Wasserqualität</h2>
+        <p class="reveal">Der Filter ist der stille Held Ihrer Wasserqualität. Er fängt Schmutzpartikel, Hautschuppen, Haare und andere Verunreinigungen auf, bevor sie das Wasser trüben oder die Rohrleitungen verstopfen können. Ein verschmutzter Filter verliert drastisch an Leistung und zwingt die Pumpe, härter zu arbeiten &ndash; das kostet Energie und verkürzt die Lebensdauer der Komponenten.</p>
+        <p class="reveal">Planen Sie die folgenden Reinigungsintervalle ein:</p>
+        <ul class="reveal">
+            <li><strong>Wöchentlich:</strong> Filter entnehmen und mit einem Gartenschlauch gründlich abspülen. Sprühen Sie dabei zwischen die einzelnen Filterfalten, um eingelagerten Schmutz zu entfernen.</li>
+            <li><strong>Monatlich:</strong> Den Filter über Nacht in einer speziellen Filterreinigungslösung einweichen. Das löst eingebettete Fette und Kalkablagerungen, die sich durch einfaches Abspülen nicht entfernen lassen.</li>
+            <li><strong>Jährlich:</strong> Filter komplett austauschen. Auch bei bester Pflege verlieren Filterkartuschen nach etwa 12 Monaten ihre volle Filterleistung.</li>
+        </ul>
+
+        <div class="info-box tip reveal">
+            <div class="info-box-title">&#128161; Profi-Empfehlung</div>
+            <p>Legen Sie sich einen zweiten Filtersatz zu. So können Sie beim wöchentlichen Reinigen sofort den Ersatzfilter einsetzen und den verschmutzten Filter in Ruhe trocknen lassen. Ein vollständig getrockneter Filter filtert nachweislich effektiver als ein dauerhaft nass verwendeter.</p>
+        </div>
+
+        <h2 class="reveal">Wasserwechsel: Frischer Start für Ihren Whirlpool</h2>
+        <p class="reveal">Selbst bei perfekter Wasserpflege reichern sich im Laufe der Zeit gelöste Stoffe im Wasser an: Mineralien, Körperfette, Kosmetikreste und abgebaute Chemikalien. Ab einer bestimmten Konzentration lässt sich das Wasser nicht mehr zuverlässig pflegen &ndash; es wird trüb, riecht unangenehm oder schäumt bei eingeschalteten Düsen.</p>
+        <p class="reveal">Die Faustregel für den Wasserwechsel lautet: <strong>Alle 3 bis 4 Monate</strong> das komplette Wasser ablassen und neu befüllen. Bei intensiver Nutzung (tägliches Baden, viele Badegäste) kann ein kürzeres Intervall von 8 bis 10 Wochen sinnvoll sein. Vor dem Neubefüllen empfiehlt sich eine Rohrleitungsspülung mit einem speziellen Rohrreiniger, um Biofilm aus den Leitungen zu entfernen.</p>
+        <p class="reveal">Beim Setho 505 mit seinem Fassungsvermögen von 1.100 Litern ist ein Wasserwechsel unkompliziert und in etwa 30 bis 45 Minuten erledigt. Nach dem Befüllen gleichen Sie zuerst die Alkalinität an, dann den pH-Wert und dosieren abschließend das Desinfektionsmittel. Lassen Sie die Pumpen mindestens 30 Minuten im Filtermodus laufen, bevor Sie die Wasserparameter erneut prüfen.</p>
+
+        <h2 class="reveal">Ihre wöchentliche Pflegeroutine</h2>
+        <p class="reveal">Mit einer festen Routine wird die Wasserpflege zum Selbstläufer. Planen Sie zweimal pro Woche etwa 10 Minuten ein &ndash; das genügt, um Ihr Wasser dauerhaft in Topzustand zu halten.</p>
+        <ol class="reveal">
+            <li>Teststreifen ins Wasser halten und Werte ablesen (pH, Alkalinität, Desinfektionsmittel).</li>
+            <li>Bei Bedarf pH-Wert korrigieren &ndash; immer zuerst den pH-Wert, dann das Desinfektionsmittel.</li>
+            <li>Desinfektionsmittel nachdosieren, wenn der Wert unter dem Zielbereich liegt.</li>
+            <li>Wasseroberfläche mit einem Kescher von Blättern und Insekten befreien.</li>
+            <li>Whirlpool-Abdeckung mit einem feuchten Tuch abwischen.</li>
+            <li>Einmal pro Woche den Filter entnehmen und abspülen.</li>
+        </ol>
+
+        <h3 class="reveal">Monatliche Zusatzaufgaben</h3>
+        <ul class="reveal">
+            <li>Filter über Nacht in Reinigungslösung einweichen.</li>
+            <li>Wasserlinie am Acryl mit einem speziellen Whirlpool-Oberflächenreiniger abwischen (keine Scheuermittel!).</li>
+            <li>Acrylabdeckung mit UV-Schutzspray behandeln, um Ausbleichen und Rissbildung vorzubeugen.</li>
+            <li>Alle Düsen kurz auf maximale Leistung stellen und einzeln prüfen, ob alle frei sind.</li>
+        </ul>
+
+        <h2 class="reveal">Häufige Fehler bei der Wasserpflege</h2>
+        <p class="reveal">Selbst erfahrene Whirlpool-Besitzer machen gelegentlich Fehler, die sich leicht vermeiden lassen. Hier sind die häufigsten Stolperfallen:</p>
+        <ul class="reveal">
+            <li><strong>Chemikalien direkt ins Wasser schütten:</strong> Granulat immer bei laufender Zirkulation an verschiedenen Stellen einstreuen &ndash; niemals konzentriert an einer Stelle. Konzentrierte Chemie kann die Acryl-Oberfläche bleichen.</li>
+            <li><strong>Zu viel Desinfektionsmittel verwenden:</strong> Mehr ist nicht besser. Überdosiertes Chlor reizt Haut und Augen, greift Dichtungen an und lässt das Wasser unangenehm riechen.</li>
+            <li><strong>Messen nach der Chemie-Zugabe vergessen:</strong> Warten Sie 2 bis 4 Stunden nach der Dosierung und messen Sie dann erneut, um sicherzustellen, dass die Werte im Zielbereich liegen.</li>
+            <li><strong>Abdeckung beim Schocken geschlossen halten:</strong> Bei einer Stoßchlorung (Schockbehandlung) muss die Abdeckung 20 bis 30 Minuten geöffnet bleiben, damit Gase entweichen können.</li>
+            <li><strong>Nicht duschen vor dem Baden:</strong> Ermutigen Sie alle Badegäste, sich vorher kurz abzuduschen. Dadurch gelangen deutlich weniger Verunreinigungen ins Wasser.</li>
+        </ul>
+
+        <div class="info-box warning reveal">
+            <div class="info-box-title">&#9888;&#65039; Achtung</div>
+            <p>Mischen Sie niemals verschiedene Chemikalien miteinander, bevor Sie diese ins Wasser geben. Chlor und Brom dürfen nicht gleichzeitig verwendet werden. Geben Sie jede Chemikalie einzeln ins Wasser und warten Sie zwischen den Zugaben mindestens 15 Minuten.</p>
+        </div>
+
+        <h2 class="reveal">Die Vorteile moderner UV-C-Technologie</h2>
+        <p class="reveal">Traditionelle Wasserdesinfektion basiert ausschließlich auf chemischen Mitteln. Moderne Whirlpools wie der Setho 505 setzen zusätzlich auf physikalische Desinfektion durch UV-C-Licht. Dabei wird das Wasser durch eine Kammer geleitet, in der ultraviolettes Licht mit einer Wellenlänge von 254 Nanometern Bakterien, Viren und andere Mikroorganismen inaktiviert.</p>
+        <p class="reveal">Die Vorteile sind erheblich: Sie benötigen deutlich weniger chemische Desinfektionsmittel, das Wasser fühlt sich weicher und angenehmer an, es gibt weniger Chlorgeruch und weniger Hautirritationen. Gleichzeitig eliminiert das UV-C-System auch chlorresistente Keime wie Kryptosporidien und Legionellen, gegen die chemische Mittel allein nur begrenzt wirksam sind. Die UV-C-Lampe sollte etwa alle 12 Monate ausgetauscht werden, um eine gleichbleibend hohe Desinfektionsleistung zu gewährleisten.</p>
+
+        <h2 class="reveal">Fazit: Wenig Aufwand, großer Effekt</h2>
+        <p class="reveal">Die Wasserpflege eines Whirlpools klingt zunächst komplex, ist aber mit einer klaren Routine erstaunlich einfach. Halten Sie den pH-Wert im Zielbereich, dosieren Sie Ihr Desinfektionsmittel regelmäßig und reinigen Sie den Filter konsequent &ndash; damit haben Sie bereits 90 % der Arbeit erledigt. Ein Whirlpool mit UV-C-Desinfektion wie der Setho 505 macht Ihnen die Pflege zusätzlich leichter, da er den Chemikalieneinsatz signifikant reduziert.</p>
+        <p class="reveal">Investieren Sie zweimal pro Woche zehn Minuten in Ihre Wasserqualität, und Sie werden jeden Badegang in kristallklarem, hygienisch reinem Wasser genießen können &ndash; genau so, wie ein Premium-Whirlpool-Erlebnis sein sollte.</p>
+
+    </article>
+
+    <!-- CTA Banner -->
+    <div class="container">
+        <div class="cta-banner reveal">
+            <h3>Weniger Chemie dank UV-C-Technologie</h3>
+            <p>Entdecken Sie den Setho 505 mit serienmäßiger UV-C-Desinfektion für natürlich reines Wasser.</p>
+            <a href="produkt.html" class="cta-button">Setho 505 entdecken &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Related Articles -->
+    <section class="related-section">
+        <div class="container">
+            <h2 class="reveal">Weitere Ratgeber-Artikel</h2>
+            <div class="related-grid">
+                <a href="blog-aufstellung.html" class="related-card reveal">
+                    <div class="related-card-img"><img src="images/blog-aufstellung.jpg" alt="Whirlpool-Aufstellung" loading="lazy"></div>
+                    <div class="related-card-body">
+                        <div class="related-card-category">Aufstellung</div>
+                        <div class="related-card-title">Whirlpool aufstellen: Was Sie vorher wissen müssen</div>
+                        <div class="related-card-excerpt">Untergrund, Stromanschluss, Lieferung &ndash; der komplette Planungsleitfaden.</div>
+                    </div>
+                </a>
+                <a href="blog-gecko-vs-balboa.html" class="related-card reveal">
+                    <div class="related-card-img"><img src="images/blog-technik.jpg" alt="Gecko Steuerung" loading="lazy"></div>
+                    <div class="related-card-body">
+                        <div class="related-card-category">Technik</div>
+                        <div class="related-card-title">Gecko vs. Balboa: Welche Steuerung ist besser?</div>
+                        <div class="related-card-excerpt">Zwei Systeme im Vergleich &ndash; und warum wir uns für Gecko entschieden haben.</div>
+                    </div>
+                </a>
+                <a href="blog-gesundheit.html" class="related-card reveal">
+                    <div class="related-card-img"><img src="images/blog-wellness.jpg" alt="Gesundheit und Wellness" loading="lazy"></div>
+                    <div class="related-card-body">
+                        <div class="related-card-category">Wellness</div>
+                        <div class="related-card-title">5 gesundheitliche Vorteile eines Whirlpools</div>
+                        <div class="related-card-excerpt">Stressabbau, besserer Schlaf und mehr &ndash; warum ein Whirlpool gut für Sie ist.</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">Ocean <span>Spa</span></div>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="widerrufsbelehrung.html">Widerrufsbelehrung</a></li>
+                    <li><a href="agb.html">AGB</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="index.html#kontakt">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 Ocean Spa Whirlpools. Alle Rechte vorbehalten.</span>
+                <span>Setho 505 &ndash; Luxus ohne Kompromisse</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        });
+        // Start scrolled since hero is dark
+        nav.classList.add('scrolled');
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navEl = document.querySelector('.nav');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            navEl.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                navEl.classList.remove('menu-open');
+            });
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+    <script src="cookie-banner.js"></script>
+</body>
+</html>

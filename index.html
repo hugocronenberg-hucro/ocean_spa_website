@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Spa – Setho 505 | Luxus-Whirlpool zum fairen Preis</title>
+    <meta name="description" content="Der Setho 505 von Ocean Spa – ein Premium-Whirlpool mit allen Extras, direkt vom Werk. Unschlagbares Preis-Leistungs-Verhältnis ohne Kompromisse.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/bpi0zni.css">
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --accent: #5BA8A2;
+            --accent-light: #C0E3E0;
+            --accent-dark: #3D8A84;
+            --dark: #1A1A2E;
+            --dark-soft: #2D2D44;
+            --white: #FFFFFF;
+            --off-white: #F7F8FA;
+            --gray-light: #ECEEF1;
+            --gray: #9CA3AF;
+            --gray-dark: #6B7280;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --gradient-accent: linear-gradient(135deg, #5BA8A2 0%, #7BBFB9 50%, #5BA8A2 100%);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+            --shadow-accent: 0 8px 30px rgba(91,168,162,0.25);
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5 { font-family: 'all-round-gothic', sans-serif; font-weight: 500; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--off-white); }
+        ::-webkit-scrollbar-thumb { background: var(--gray); border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(91,168,162,0.2); }
+            50% { box-shadow: 0 0 30px rgba(91,168,162,0.4); }
+        }
+        @keyframes water-ripple {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            padding-top: calc(20px + env(safe-area-inset-top, 0px));
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav.menu-open {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .nav.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 0;
+            padding-top: calc(12px + env(safe-area-inset-top, 0px));
+            box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo-icon {
+            height: 44px;
+            width: auto;
+        }
+        .nav-logo-icon.color { display: none; }
+
+        .nav-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--white);
+            letter-spacing: 0.5px;
+            transition: color 0.4s;
+        }
+        .nav.scrolled .nav-logo-text,
+        .nav.menu-open .nav-logo-text { color: var(--text-primary); }
+        .nav-logo-text span {
+            color: var(--accent);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav.scrolled .nav-links a { color: var(--text-secondary); }
+        .nav.menu-open .nav-links a { color: var(--text-secondary); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--accent) !important;
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            letter-spacing: 0.3px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s !important;
+        }
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-accent);
+            background: var(--accent-dark) !important;
+        }
+        .nav-cta::after { display: none !important; }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+        .nav.scrolled .mobile-toggle span,
+        .nav.menu-open .mobile-toggle span { background: var(--text-primary); }
+        .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: url('bilder/setho-505-whirlpool-familie-garten.jpg') center/cover no-repeat var(--dark);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(26,26,46,0.65) 0%, rgba(26,26,46,0.45) 50%, rgba(26,26,46,0.75) 100%);
+        }
+        .hero-particles {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            overflow: hidden;
+        }
+        .hero-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 24px 140px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: var(--accent-light);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        .hero h1 .gold {
+            background: linear-gradient(135deg, #C0E3E0 0%, #7BBFB9 50%, #C0E3E0 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto 48px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(91,168,162,0.3);
+            background: var(--accent-dark);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            border: 1.5px solid rgba(255,255,255,0.25);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent-light);
+            color: var(--accent-light);
+            background: rgba(255,255,255,0.08);
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 72px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-value {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            line-height: 1;
+        }
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 6px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeIn 1s ease-out 1.2s both;
+        }
+        .hero-scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--accent-light), transparent);
+            animation: float 2s ease-in-out infinite;
+        }
+
+        /* ===== SECTION STYLES ===== */
+        .section {
+            padding: 100px 0;
+        }
+        .section-dark {
+            background: var(--off-white);
+        }
+        .section-light {
+            background: var(--white);
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .section-label-line {
+            width: 30px;
+            height: 2px;
+            background: var(--accent);
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        .section-title .gold { color: var(--accent); }
+        .section-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 650px;
+            color: var(--text-secondary);
+        }
+        .section-subtitle-dark { color: var(--text-secondary); }
+        .section-subtitle-light { color: var(--text-secondary); }
+
+        /* ===== PHILOSOPHY / USP SECTION ===== */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 64px;
+        }
+        .philosophy-card {
+            background: var(--white);
+            border: 1px solid var(--gray-light);
+            border-radius: 20px;
+            padding: 40px 32px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+        .philosophy-card:hover::before {
+            transform: scaleX(1);
+        }
+        .philosophy-card:hover {
+            border-color: var(--accent-light);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .philosophy-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 24px;
+        }
+        .philosophy-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        .philosophy-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ===== PRODUCT SHOWCASE ===== */
+        .product-showcase {
+            position: relative;
+        }
+        .product-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 64px;
+        }
+        .product-visual {
+            position: relative;
+        }
+        .product-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--off-white);
+            border: 1px solid var(--gray-light);
+            box-shadow: var(--shadow-md);
+        }
+        .product-video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+        }
+        .product-video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+        .product-badge-float {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .product-details h2 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            margin-bottom: 8px;
+        }
+        .product-model {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .product-description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+        }
+        .product-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .product-highlight {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--off-white);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .product-highlight-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ===== FEATURES GRID ===== */
+        .features-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 64px;
+        }
+        .feature-card {
+            background: var(--off-white);
+            border-radius: 20px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid transparent;
+            position: relative;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-light);
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin: 0 auto 20px;
+        }
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ===== ADVANTAGE / WHY US SECTION ===== */
+        .advantages {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        .advantage-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-top: 64px;
+        }
+        .advantage-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 48px 0;
+            border-bottom: 1px solid var(--gray-light);
+            transition: all 0.4s;
+        }
+        .advantage-item:first-child { border-top: 1px solid var(--gray-light); }
+        .advantage-item:hover {
+            padding-left: 16px;
+        }
+        .advantage-number {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.3;
+            line-height: 1;
+        }
+        .advantage-item:hover .advantage-number { opacity: 1; }
+        .advantage-title {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .advantage-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing {
+            padding: 100px 0;
+            background: var(--off-white);
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-card {
+            max-width: 700px;
+            margin: 64px auto 0;
+            background: var(--white);
+            border: 1px solid var(--gray-light);
+            border-radius: 24px;
+            padding: 56px 48px;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-md);
+        }
+        .pricing-card-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--white);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .pricing-model {
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .pricing-name {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+        .pricing-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+            margin: 0 auto 32px;
+        }
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+        .pricing-features li .check {
+            color: var(--accent);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .pricing-cta-area {
+            margin-top: 40px;
+        }
+        .pricing-note {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 64px;
+        }
+        .testimonial-card {
+            background: var(--off-white);
+            border-radius: 20px;
+            padding: 36px;
+            border: 1px solid transparent;
+            transition: all 0.4s;
+        }
+        .testimonial-card:hover {
+            border-color: var(--accent-light);
+            box-shadow: var(--shadow-md);
+        }
+        .testimonial-stars {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--accent-dark);
+            font-size: 1rem;
+        }
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+        .testimonial-location {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 100px 0;
+            background: var(--white);
+        }
+        .faq-grid {
+            max-width: 800px;
+            margin: 64px auto 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--gray-light);
+            overflow: hidden;
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+            cursor: pointer;
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: color 0.3s;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+        .faq-question:hover { color: var(--accent); }
+        .faq-toggle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            margin-left: 16px;
+            font-size: 1.2rem;
+            color: var(--accent-dark);
+        }
+        .faq-item.active .faq-toggle {
+            background: var(--accent);
+            color: var(--white);
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 24px;
+        }
+        .faq-answer p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: 100px 0;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            margin-top: 64px;
+        }
+        .contact-info-items {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            margin-top: 32px;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .contact-info-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        .contact-info-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .contact-info-value {
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+        .contact-info-value a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-info-value a:hover { color: var(--accent); }
+
+        .contact-form {
+            background: var(--off-white);
+            border: 1px solid var(--gray-light);
+            border-radius: 24px;
+            padding: 44px;
+        }
+        .contact-form h3 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 28px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gray-dark);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--white);
+            border: 1px solid var(--gray-light);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(91,168,162,0.1);
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            letter-spacing: 0.3px;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-accent);
+            background: var(--accent-dark);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--off-white);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--gray-light);
+        }
+        .footer-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-logo img {
+            height: 36px;
+            width: auto;
+        }
+        .footer-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .footer-logo-text span { color: var(--accent); }
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .footer-links a {
+            color: var(--gray-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 30px;
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .philosophy-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .product-hero { grid-template-columns: 1fr; gap: 48px; }
+            .advantage-item { grid-template-columns: 60px 1fr; }
+            .advantage-text { grid-column: 2; }
+            .testimonial-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(20px);
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray-light);
+                box-shadow: var(--shadow-md);
+            }
+            .nav-links.open a { color: var(--text-secondary); }
+            .nav-links.open a:hover { color: var(--accent); }
+            .mobile-toggle { display: flex; }
+            .hero-stats { gap: 32px; flex-wrap: wrap; }
+            .hero-stat-value { font-size: 1.8rem; }
+            .philosophy-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .pricing-features { grid-template-columns: 1fr; }
+            .pricing-card { padding: 40px 28px; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+            .contact-form { padding: 32px 24px; }
+            .form-row { grid-template-columns: 1fr; }
+            .advantage-item { grid-template-columns: 1fr; gap: 12px; padding: 32px 0; }
+            .advantage-number { font-size: 2rem; }
+            .footer-top { flex-direction: column; gap: 20px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+            .product-highlights { grid-template-columns: 1fr; }
+            .section { padding: 72px 0; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><div class="nav-logo-text">Ocean <span>Spa</span></div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#philosophie">Philosophie</a></li>
+                    <li><a href="produkt.html">Setho 505</a></li>
+                    <li><a href="#ausstattung">Ausstattung</a></li>
+                    <li><a href="blog.html">Ratgeber</a></li>
+                    <li><a href="#kundenstimmen">Kundenstimmen</a></li>
+                    <li><a href="#kontakt" class="nav-cta">Beratung anfragen</a></li>
+                </ul>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-particles">
+            <div class="hero-particle" style="top:20%;left:10%;animation-delay:0s;"></div>
+            <div class="hero-particle" style="top:60%;left:85%;animation-delay:1s;"></div>
+            <div class="hero-particle" style="top:30%;left:70%;animation-delay:2s;"></div>
+            <div class="hero-particle" style="top:80%;left:30%;animation-delay:3s;"></div>
+            <div class="hero-particle" style="top:45%;left:50%;animation-delay:0.5s;"></div>
+            <div class="hero-particle" style="top:15%;left:45%;animation-delay:1.5s;"></div>
+            <div class="hero-particle" style="top:70%;left:60%;animation-delay:2.5s;"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Preis-Leistungs-Champion
+            </div>
+            <h1>Luxus-Whirlpool.<br>Ohne <span class="gold">Kompromisse.</span></h1>
+            <p class="hero-sub">
+                Der Setho 505 – ein Premium-Whirlpool mit allen Extras, die ein Luxusmodell haben muss.
+                Direkt vom Werk, ohne Zwischenhändler. So erhalten Sie höchste Qualität zum fairsten Preis.
+            </p>
+            <div class="hero-buttons">
+                <a href="#kontakt" class="btn-primary">
+                    Jetzt beraten lassen
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#produkt" class="btn-secondary">
+                    Setho 505 entdecken
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value" data-count="80">80</div>
+                    <div class="hero-stat-label">Wasserdüsen</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">3 x 3 PS</div>
+                    <div class="hero-stat-label">Pumpenleistung</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">1.100 L</div>
+                    <div class="hero-stat-label">Wasservolumen</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">0</div>
+                    <div class="hero-stat-label">Zwischenhändler</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            Mehr erfahren
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== PHILOSOPHIE / USP ===== -->
+    <section class="section section-dark" id="philosophie">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">
+                    <span class="section-label-line"></span>
+                    Unsere Philosophie
+                </div>
+                <div class="section-title" style="color:var(--text-primary)">
+                    Ein Modell. Keine Kompromisse.<br><span class="gold">Maximale Qualität.</span>
+                </div>
+                <p class="section-subtitle section-subtitle-dark">
+                    Wir haben uns bewusst für nur ein einziges Whirlpool-Modell entschieden – und genau das macht uns einzigartig.
+                </p>
+            </div>
+            <div class="philosophy-grid">
+                <div class="philosophy-card reveal reveal-delay-1">
+                    <div class="philosophy-icon">🏭</div>
+                    <h3>Direkt vom Werk</h3>
+                    <p>Wir kaufen direkt beim Hersteller – ohne Importeure, ohne Großhändler, ohne versteckte Margen. Den Preisvorteil geben wir komplett an Sie weiter.</p>
+                </div>
+                <div class="philosophy-card reveal reveal-delay-2">
+                    <div class="philosophy-icon">🎯</div>
+                    <h3>Ein Modell – perfektioniert</h3>
+                    <p>Statt dutzende mittelmäßige Modelle bieten wir eines an: den Setho 505. Perfekt durchdacht, mit jeder Komponente in höchster Qualität.</p>
+                </div>
+                <div class="philosophy-card reveal reveal-delay-3">
+                    <div class="philosophy-icon">💎</div>
+                    <h3>Keine Kompromisse</h3>
+                    <p>Wir bestimmen selbst, welche Komponenten verbaut werden. Es kommen nur Bauteile höchster Qualität zum Einsatz – bei jedem einzelnen Detail.</p>
+                </div>
+                <div class="philosophy-card reveal reveal-delay-1">
+                    <div class="philosophy-icon">📦</div>
+                    <h3>Schlanke Struktur</h3>
+                    <p>Kein großer Showroom, kein riesiges Lager. Durch unsere schlanke Betriebsstruktur halten wir die Kosten niedrig – und geben diesen Vorteil weiter.</p>
+                </div>
+                <div class="philosophy-card reveal reveal-delay-2">
+                    <div class="philosophy-icon">⚡</div>
+                    <h3>Alle Extras inklusive</h3>
+                    <p>Was andere als teure Zusatzausstattung verkaufen, ist beim Setho 505 serienmäßig dabei. Keine versteckten Kosten, keine bösen Überraschungen.</p>
+                </div>
+                <div class="philosophy-card reveal reveal-delay-3">
+                    <div class="philosophy-icon">🏆</div>
+                    <h3>Unschlagbare Preis-Leistung</h3>
+                    <p>Das Ergebnis: Ein Luxus-Whirlpool mit allen Features, der in diesem Preis-Leistungs-Verhältnis seinesgleichen sucht.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUKT SHOWCASE ===== -->
+    <section class="section" id="produkt">
+        <div class="container product-showcase">
+            <div class="product-hero">
+                <div class="product-visual reveal">
+                    <div class="product-image-container">
+                        <div class="product-video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/FkvcqIsi4jo?si=hxkM7328WnSgl2Cb" title="Setho 505 – Vorstellungsvideo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="product-badge-float">Premium-Klasse</div>
+                    </div>
+                </div>
+                <div class="product-details reveal">
+                    <div class="section-label">
+                        <span class="section-label-line"></span>
+                        Unser Whirlpool
+                    </div>
+                    <h2 class="section-title">Setho <span class="gold">505</span></h2>
+                    <div class="product-model">Premium Luxury Whirlpool</div>
+                    <p class="product-description">
+                        Der Setho 505 vereint alles, was ein Luxus-Whirlpool bieten muss – ohne Aufpreis.
+                        220 x 220 x 90 cm, Lucite/Aristesh Acryl, Gecko YE-5-CE Steuerung, 3 x 3 PS Pumpen,
+                        80 Düsen und 16 Air Jets sorgen für ein unvergleichliches Spa-Erlebnis.
+                    </p>
+                    <div class="product-highlights">
+                        <div class="product-highlight">
+                            <div class="product-highlight-icon">🫧</div>
+                            80 Jets + 16 Air Jets
+                        </div>
+                        <div class="product-highlight">
+                            <div class="product-highlight-icon">🎛️</div>
+                            Gecko YE-5-CE + WLAN
+                        </div>
+                        <div class="product-highlight">
+                            <div class="product-highlight-icon">💆</div>
+                            3 x 3 PS Pumpen
+                        </div>
+                        <div class="product-highlight">
+                            <div class="product-highlight-icon">🌊</div>
+                            2 Fontänen + Wasserfall
+                        </div>
+                        <div class="product-highlight">
+                            <div class="product-highlight-icon">💡</div>
+                            LED-Farblichttherapie
+                        </div>
+                        <div class="product-highlight">
+                            <div class="product-highlight-icon">🧘</div>
+                            Aromatherapie + UV-C
+                        </div>
+                    </div>
+                    <a href="#kontakt" class="btn-primary">
+                        Persönliche Beratung
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES GRID ===== -->
+    <section class="features-section" id="ausstattung">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <div class="section-label" style="justify-content:center;">
+                    <span class="section-label-line"></span>
+                    Serienausstattung
+                </div>
+                <div class="section-title">Alles dabei. <span class="gold">Ohne Aufpreis.</span></div>
+                <p class="section-subtitle section-subtitle-light" style="margin:0 auto;">
+                    Was bei anderen Herstellern hunderte Euro extra kostet, ist beim Setho 505 serienmäßig verbaut.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon">🫧</div>
+                    <h3>80 Jets + 16 Air Jets</h3>
+                    <p>80 Wasserdüsen und 16 Air Jets mit 3 x 3 PS Pumpen plus 700 W Druckluftpumpe für kraftvolle Massage.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon">🎛️</div>
+                    <h3>Gecko YE-5-CE + WLAN</h3>
+                    <p>Gecko k1001 Touchdisplay mit WLAN-Smartphonesteuerung – Temperatur, Jets, Licht und Musik per App steuern.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon">🌊</div>
+                    <h3>Fontänen & Wasserfall</h3>
+                    <p>2 Fontänen und 1 Wasserfall für ein beeindruckendes visuelles und akustisches Erlebnis.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-4">
+                    <div class="feature-icon">🔊</div>
+                    <h3>Bluetooth Musikanlage</h3>
+                    <p>Integrierte Bluetooth-Musikanlage für perfekten Klang direkt in Ihrer Wellness-Oase.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon">💡</div>
+                    <h3>LED-Farblichttherapie</h3>
+                    <p>Großes Unterwasser LED-Paket plus LED-Außenbeleuchtung – Farblichttherapie für alle Stimmungen.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon">🧘</div>
+                    <h3>Aromatherapie</h3>
+                    <p>Integrierte Aromatherapie-Funktion – Entspannung für alle Sinne durch wohltuende Düfte.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon">🔬</div>
+                    <h3>UV-C Desinfektion</h3>
+                    <p>UV-C Licht neutralisiert 99,9% aller Bakterien und Viren – weniger Chemie, kristallklares Wasser.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-4">
+                    <div class="feature-icon">🧊</div>
+                    <h3>ECO-Pro 4-fach-Isolierung</h3>
+                    <p>Vierfache Isolierung mit WPC-Verkleidung und Edelstahl-Rahmen – spart Energie und hält die Wärme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VORTEILE ===== -->
+    <section class="advantages" id="vorteile">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <div class="section-label" style="justify-content:center;">
+                    <span class="section-label-line"></span>
+                    Warum Ocean Spa
+                </div>
+                <div class="section-title">Ihre Vorteile <span class="gold">auf einen Blick</span></div>
+            </div>
+            <div class="advantage-items">
+                <div class="advantage-item reveal">
+                    <div class="advantage-number">01</div>
+                    <div>
+                        <div class="advantage-title">Direkt vom Hersteller</div>
+                    </div>
+                    <div class="advantage-text">
+                        Kein Importeur, kein Großhändler – wir kaufen direkt vom Werk. Das spart bis zu 40% gegenüber vergleichbaren Modellen im Fachhandel.
+                    </div>
+                </div>
+                <div class="advantage-item reveal reveal-delay-1">
+                    <div class="advantage-number">02</div>
+                    <div>
+                        <div class="advantage-title">Ein Modell = maximale Expertise</div>
+                    </div>
+                    <div class="advantage-text">
+                        Durch die Fokussierung auf ein Modell kennen wir jede Schraube. Das bedeutet schnellerer Service, bessere Beratung und optimierte Ersatzteilversorgung.
+                    </div>
+                </div>
+                <div class="advantage-item reveal reveal-delay-2">
+                    <div class="advantage-number">03</div>
+                    <div>
+                        <div class="advantage-title">Keine versteckten Kosten</div>
+                    </div>
+                    <div class="advantage-text">
+                        Alle Extras sind serienmäßig – LED-Beleuchtung, Soundsystem, UV-Desinfektion und mehr. Der Preis, den Sie sehen, ist der Preis, den Sie zahlen.
+                    </div>
+                </div>
+                <div class="advantage-item reveal reveal-delay-3">
+                    <div class="advantage-number">04</div>
+                    <div>
+                        <div class="advantage-title">2 Jahre Vollgarantie</div>
+                    </div>
+                    <div class="advantage-text">
+                        Umfassende 2-Jahres-Garantie auf den gesamten Whirlpool. Dank schneller Ersatzteilversorgung und spezialisiertem Service sind Probleme schnell gelöst.
+                    </div>
+                </div>
+                <div class="advantage-item reveal reveal-delay-4">
+                    <div class="advantage-number">05</div>
+                    <div>
+                        <div class="advantage-title">Nur Premium-Komponenten</div>
+                    </div>
+                    <div class="advantage-text">
+                        Wir gehen keine Kompromisse ein: US-Acryl, Gecko-Steuerung, hochwertige Pumpen. Jede Komponente wird von uns ausgewählt und geprüft.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="pricing" id="preis">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <div class="section-label" style="justify-content:center;">
+                    <span class="section-label-line"></span>
+                    Faire Preise
+                </div>
+                <div class="section-title" style="color:var(--text-primary);">
+                    Premium-Qualität.<br><span class="gold">Fairer Preis.</span>
+                </div>
+                <p class="section-subtitle section-subtitle-dark" style="margin:0 auto;">
+                    Durch unsere direkte Werksbeschaffung und schlanke Struktur bieten wir Ihnen ein unschlagbares Preis-Leistungs-Verhältnis.
+                </p>
+            </div>
+            <div class="pricing-card reveal">
+                <div class="pricing-card-badge">Preis-Leistungs-Champion</div>
+                <div class="pricing-model">Premium Whirlpool</div>
+                <h3 class="pricing-name">Setho 505</h3>
+                <div class="pricing-divider"></div>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> Lucite/Aristesh Acryl + PU-Isolierung</li>
+                    <li><span class="check">✓</span> Gecko YE-5-CE + k1001 WLAN-Steuerung</li>
+                    <li><span class="check">✓</span> 3 x 3 PS Wasserpumpen</li>
+                    <li><span class="check">✓</span> 80 Jets + 16 Air Jets</li>
+                    <li><span class="check">✓</span> Zirkulationspumpe (0,35 PS)</li>
+                    <li><span class="check">✓</span> Druckluftpumpe (700 W)</li>
+                    <li><span class="check">✓</span> 2 Fontänen + 1 Wasserfall</li>
+                    <li><span class="check">✓</span> UV-C Desinfektion</li>
+                    <li><span class="check">✓</span> LED-Farblichttherapie innen & außen</li>
+                    <li><span class="check">✓</span> Bluetooth Musikanlage</li>
+                    <li><span class="check">✓</span> Aromatherapie</li>
+                    <li><span class="check">✓</span> ECO-Pro 4-fach-Isolierung</li>
+                    <li><span class="check">✓</span> WPC-Verkleidung & Edelstahl-Rahmen</li>
+                    <li><span class="check">✓</span> 230 V oder 380 V Anschluss</li>
+                    <li><span class="check">✓</span> 220 x 220 x 90 cm (3 Sitze / 2 Liegen)</li>
+                    <li><span class="check">✓</span> 2 Jahre Vollgarantie</li>
+                </ul>
+                <div class="pricing-cta-area">
+                    <a href="#kontakt" class="btn-primary" style="width:100%;justify-content:center;">
+                        Preis anfragen &amp; beraten lassen
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+                <p class="pricing-note">
+                    Fordern Sie jetzt Ihr persönliches Angebot an. Wir beraten Sie gerne telefonisch oder vor Ort.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials" id="kundenstimmen">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <div class="section-label" style="justify-content:center;">
+                    <span class="section-label-line"></span>
+                    Kundenstimmen
+                </div>
+                <div class="section-title">Was unsere Kunden <span class="gold">sagen</span></div>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        „Wir haben lange verglichen und kein vergleichbares Angebot gefunden. Die Qualität des Setho 505 ist auf dem Niveau von Pools, die das Doppelte kosten."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MK</div>
+                        <div>
+                            <div class="testimonial-name">Michael K.</div>
+                            <div class="testimonial-location">München</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        „Die Beratung war erstklassig und ehrlich. Man merkt, dass das Team wirklich jedes Detail des Whirlpools kennt. Absolute Empfehlung!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SL</div>
+                        <div>
+                            <div class="testimonial-name">Sandra L.</div>
+                            <div class="testimonial-location">Hamburg</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-3">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        „Endlich ein Anbieter, der nicht mit Extras lockt, die dann extra kosten. Beim Setho 505 ist wirklich alles dabei. Top Preis-Leistung!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">TW</div>
+                        <div>
+                            <div class="testimonial-name">Thomas W.</div>
+                            <div class="testimonial-location">Berlin</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="reveal" style="text-align:center;">
+                <div class="section-label" style="justify-content:center;">
+                    <span class="section-label-line"></span>
+                    Häufige Fragen
+                </div>
+                <div class="section-title">Gut zu <span class="gold">wissen</span></div>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        Warum bieten Sie nur ein einziges Modell an?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Durch die Konzentration auf ein Modell können wir dieses bis ins kleinste Detail perfektionieren. Wir wählen jede Komponente selbst aus, erzielen bessere Einkaufspreise und können unseren Kunden eine unschlagbare Kombination aus Qualität und Preis bieten.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-1">
+                    <button class="faq-question">
+                        Wie kann der Preis so günstig sein bei dieser Qualität?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Wir kaufen direkt vom Werk ohne Zwischenhändler, haben keinen teuren Showroom und kein großes Lager. Durch die Fokussierung auf ein Modell erzielen wir Skaleneffekte. All diese Einsparungen geben wir direkt an Sie weiter.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-2">
+                    <button class="faq-question">
+                        Was ist in der 2-Jahres-Garantie enthalten?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Unsere umfassende 2-Jahres-Garantie deckt den gesamten Whirlpool ab – Acrylschale, Pumpen, Steuerung und alle verbauten Komponenten. Dank unserer Spezialisierung auf ein Modell sind Ersatzteile schnell verfügbar.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-3">
+                    <button class="faq-question">
+                        Kann ich den Whirlpool vor dem Kauf testen?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ja, wir bieten nach Terminvereinbarung die Möglichkeit, den Setho 505 vor Ort zu besichtigen. Kontaktieren Sie uns telefonisch, um einen Besichtigungstermin zu vereinbaren.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-4">
+                    <button class="faq-question">
+                        Wie funktioniert die Lieferung und Installation?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Wir beraten Sie umfassend zu den Aufstellbedingungen und organisieren die Lieferung. Bei Fragen zur Installation stehen wir Ihnen mit unserem Fachwissen jederzeit zur Seite.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section-dark" id="kontakt">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">
+                    <span class="section-label-line"></span>
+                    Kontakt
+                </div>
+                <div class="section-title" style="color:var(--text-primary)">
+                    Lassen Sie sich <span class="gold">beraten</span>
+                </div>
+                <p class="section-subtitle section-subtitle-dark">
+                    Wir nehmen uns Zeit für Sie. Stellen Sie uns Ihre Fragen – persönlich, ehrlich und unverbindlich.
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="reveal">
+                    <div class="contact-info-items">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📞</div>
+                            <div>
+                                <div class="contact-info-label">Telefon</div>
+                                <div class="contact-info-value">
+                                    <a href="tel:+4917644543693">+49 176 4454 3693</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon" style="color:#25D366;">💬</div>
+                            <div>
+                                <div class="contact-info-label">WhatsApp</div>
+                                <div class="contact-info-value">
+                                    <a href="https://wa.me/4917644543693" target="_blank" rel="noopener">+49 176 4454 3693</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">✉️</div>
+                            <div>
+                                <div class="contact-info-label">E-Mail</div>
+                                <div class="contact-info-value">
+                                    <a href="mailto:info@oceanspa-whirlpools.de">info@oceanspa-whirlpools.de</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">🌐</div>
+                            <div>
+                                <div class="contact-info-label">Website</div>
+                                <div class="contact-info-value">
+                                    <a href="https://oceanspa-whirlpools.de">oceanspa-whirlpools.de</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">🕐</div>
+                            <div>
+                                <div class="contact-info-label">Erreichbarkeit</div>
+                                <div class="contact-info-value">Mo–Fr: 9:00–18:00 Uhr</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form reveal reveal-delay-2">
+                    <h3>Unverbindlich anfragen</h3>
+                    <form id="contactForm" action="https://formspree.io/f/info@oceanspa-whirlpools.de" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Ihr vollständiger Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-Mail</label>
+                                <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon (optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+49 ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nachricht</label>
+                            <textarea id="message" name="message" placeholder="Ihre Fragen oder Wünsche zum Setho 505..." required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="Neue Anfrage über oceanspa-whirlpools.de">
+                        <input type="hidden" name="_next" value="https://oceanspa-whirlpools.de/index.html#kontakt">
+                        <input type="text" name="_gotcha" style="display:none">
+                        <button type="submit" class="btn-submit">
+                            Anfrage absenden
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">Ocean <span>Spa</span></div>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="widerrufsbelehrung.html">Widerrufsbelehrung</a></li>
+                    <li><a href="agb.html">AGB</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 Ocean Spa Whirlpools. Alle Rechte vorbehalten.</span>
+                <span>Setho 505 – Luxus ohne Kompromisse</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // === Navigation Scroll Effect ===
+        const nav = document.getElementById('nav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // === Mobile Menu ===
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navEl = document.querySelector('.nav');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            navEl.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                navEl.classList.remove('menu-open');
+            });
+        });
+
+        // === Scroll Reveal ===
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // === FAQ Accordion ===
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Open clicked if it wasn't already active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // === Smooth Scroll ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // === Contact Form (Formspree) ===
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const btn = form.querySelector('.btn-submit');
+            const originalText = btn.textContent;
+            btn.textContent = 'Wird gesendet...';
+            btn.disabled = true;
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    btn.textContent = '✓ Anfrage gesendet!';
+                    btn.style.background = '#2D8B4E';
+                    btn.style.color = '#fff';
+                    form.reset();
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.style.color = '';
+                        btn.disabled = false;
+                    }, 4000);
+                } else {
+                    throw new Error('Fehler');
+                }
+            }).catch(error => {
+                btn.textContent = '✗ Fehler – bitte erneut versuchen';
+                btn.style.background = '#c0392b';
+                btn.style.color = '#fff';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    btn.disabled = false;
+                }, 4000);
+            });
+        });
+
+        // === Counter Animation ===
+        function animateCounters() {
+            document.querySelectorAll('.hero-stat-value[data-count]').forEach(el => {
+                const target = parseInt(el.dataset.count);
+                let current = 0;
+                const duration = 2000;
+                const increment = target / (duration / 16);
+
+                function update() {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target + '+';
+                        return;
+                    }
+                    el.textContent = Math.floor(current) + '+';
+                    requestAnimationFrame(update);
+                }
+                update();
+            });
+        }
+
+        // Start counter animation when hero is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateCounters();
+                heroObserver.disconnect();
+            }
+        });
+        heroObserver.observe(document.querySelector('.hero-stats'));
+    </script>
+    <script src="cookie-banner.js"></script>
+</body>
+</html>

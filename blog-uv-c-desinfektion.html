@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UV-C Desinfektion erklärt: Weniger Chemie, sauberes Wasser | Ocean Spa Whirlpools</title>
+    <meta name="description" content="Wie UV-C Desinfektion in Whirlpools funktioniert, warum sie Chemikalien reduziert und wie das System im Setho 505 für kristallklares, hautschonendes Wasser sorgt.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/bpi0zni.css">
+    <style>
+        :root {
+            --accent: #5BA8A2;
+            --accent-light: #C0E3E0;
+            --dark: #1A1A2E;
+            --dark-soft: #2D2D44;
+            --white: #FFFFFF;
+            --off-white: #F7F8FA;
+            --gray: #9CA3AF;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --gradient-accent: linear-gradient(135deg, #5BA8A2 0%, #C0E3E0 50%, #5BA8A2 100%);
+            --gradient-soft: linear-gradient(180deg, #F7F8FA 0%, #ECEEF1 100%);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .gold { color: var(--accent); }
+
+        /* ── Navigation ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            padding-top: calc(20px + env(safe-area-inset-top, 0px));
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
+        }
+
+        .nav.menu-open {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 0;
+            padding-top: calc(12px + env(safe-area-inset-top, 0px));
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo-icon {
+            height: 44px;
+            width: auto;
+        }
+        .nav-logo-icon.color { display: none; }
+        .nav-logo-icon.white { display: block; }
+        
+        .nav-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+        .nav-logo-text span {
+            color: var(--accent);
+        }
+
+
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.3s;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s, box-shadow 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-accent);
+            background: var(--accent-dark);
+            color: var(--white) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ── Article Hero ── */
+        .article-hero {
+            background: var(--off-white);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(91, 168, 162, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(91, 168, 162, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .article-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb .separator {
+            color: rgba(156, 163, 175, 0.4);
+        }
+
+        .breadcrumb .current {
+            color: var(--accent-light);
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(91, 168, 162, 0.15);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(91, 168, 162, 0.25);
+        }
+
+        .article-hero h1 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            color: var(--text-primary);
+            line-height: 1.25;
+            margin-bottom: 24px;
+            max-width: 780px;
+            font-weight: 600;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .article-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-meta-icon {
+            font-size: 1rem;
+        }
+
+        .article-intro {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 680px;
+        }
+
+        /* ── Article Body ── */
+        .article-body {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .article-content {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .article-content h2 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.85rem;
+            color: var(--text-primary);
+            margin-top: 48px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .article-content h3 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            margin-top: 36px;
+            margin-bottom: 16px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .article-content p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 20px 0;
+            padding-left: 24px;
+        }
+
+        .article-content li {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 10px;
+        }
+
+        .article-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: var(--off-white);
+            border-left: 4px solid var(--accent);
+            padding: 24px 28px;
+            margin: 32px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .info-box-title {
+            font-family: 'all-round-gothic', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin-bottom: 0;
+        }
+
+        .info-box ul {
+            margin: 8px 0 0;
+            padding-left: 20px;
+        }
+
+        .info-box li {
+            font-size: 0.98rem;
+        }
+
+        /* ── CTA Banner ── */
+        .cta-banner {
+            background: var(--off-white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(91, 168, 162, 0.08) 0%, transparent 70%);
+        }
+
+        .cta-banner .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner h2 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .cta-banner p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 560px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(91,168,162,0.3);
+            background: var(--accent-dark);
+        }
+
+        .cta-btn-secondary {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-left: 24px;
+            transition: color 0.3s;
+            border-bottom: 1px solid rgba(91, 168, 162, 0.3);
+            padding-bottom: 2px;
+        }
+
+        .cta-btn-secondary:hover {
+            color: var(--accent-dark);
+        }
+
+        /* ── Related Articles ── */
+        .related-articles {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .related-articles h2 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .related-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px 28px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .related-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .related-card-category {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .related-card h3 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .related-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .related-card-link {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--off-white);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .footer-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--gray-light);
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-logo img {
+            height: 36px;
+            width: auto;
+        }
+        .footer-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .footer-logo-text span { color: var(--accent); }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 0;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom span {
+            color: var(--gray);
+            font-size: 0.82rem;
+        }
+
+        /* ── Reveal Animation ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray-light);
+            }
+            .mobile-toggle { display: flex; }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .article-hero {
+                padding: 130px 0 60px;
+            }
+
+            .cta-btn-secondary {
+                display: block;
+                margin: 16px auto 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-body {
+                padding: 48px 0;
+            }
+
+            .info-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><div class="nav-logo-text">Ocean <span>Spa</span></div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="produkt.html">Setho 505</a></li>
+                    <li><a href="blog.html" style="color:var(--accent)">Ratgeber</a></li>
+                    <li><a href="index.html#kundenstimmen">Kundenstimmen</a></li>
+                    <li><a href="index.html#kontakt" class="nav-cta">Beratung anfragen</a></li>
+                </ul>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Hero -->
+    <section class="article-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="blog.html">Ratgeber</a>
+                <span class="separator">/</span>
+                <span class="current">UV-C Desinfektion</span>
+            </div>
+            <div class="article-category">Wasserpflege</div>
+            <h1>UV-C Desinfektion erklärt: Weniger Chemie, <span class="gold">sauberes</span> Wasser</h1>
+            <div class="article-meta">
+                <div class="article-meta-item">
+                    <span class="article-meta-icon">&#128197;</span>
+                    <span>8. Dezember 2024</span>
+                </div>
+                <div class="article-meta-item">
+                    <span class="article-meta-icon">&#9201;</span>
+                    <span>6 Min. Lesezeit</span>
+                </div>
+            </div>
+            <p class="article-intro">UV-C Technologie revolutioniert die Wasserpflege im Whirlpool. Erfahren Sie, wie ultraviolettes Licht Keime zerstört, warum Sie deutlich weniger Chemie benötigen und wie das System im Setho 505 für kristallklares Wasser sorgt.</p>
+        </div>
+    </section>
+
+    <!-- Article Body -->
+    <section class="article-body">
+        <div class="container">
+            <div class="article-content">
+
+                <h2 class="reveal">Was ist UV-C Desinfektion?</h2>
+                <p class="reveal">UV-C Desinfektion nutzt ultraviolettes Licht mit einer spezifischen Wellenlänge von 254 Nanometern, um Mikroorganismen im Wasser abzutöten. Diese Wellenlänge liegt im kurzwelligen UV-Bereich und ist besonders effektiv, weil sie die DNA und RNA von Bakterien, Viren, Algen und anderen Keimen direkt schädigt. Die Mikroorganismen können sich nach der Bestrahlung nicht mehr vermehren und sterben ab.</p>
+                <p class="reveal">Das Prinzip ist dabei denkbar einfach: Das Whirlpool-Wasser wird durch eine Kammer geleitet, in der eine UV-C Lampe installiert ist. Während das Wasser an der Lampe vorbeifließt, wird es dem UV-C Licht ausgesetzt. Dieser Prozess findet kontinuierlich statt, solange die Zirkulationspumpe läuft. Es werden keine Chemikalien ins Wasser eingebracht &ndash; die Desinfektion erfolgt rein physikalisch.</p>
+
+                <div class="info-box reveal">
+                    <div class="info-box-title">&#128300; Wissenschaftlicher Hintergrund</div>
+                    <p>UV-C Strahlung bei 254 nm wird von der DNA der Mikroorganismen absorbiert. Dabei entstehen sogenannte Thymin-Dimere &ndash; Verbindungen zwischen benachbarten DNA-Bausteinen, die die Erbinformation unlesbar machen. Der Organismus kann sich nicht mehr teilen und wird unschädlich. Dieser Prozess erreicht bei korrekter Dosierung eine Keimreduktion von über 99,9 %.</p>
+                </div>
+
+                <h2 class="reveal">UV-C im Vergleich: Chlor, Brom und Ozon</h2>
+                <p class="reveal">Um die Vorteile der UV-C Desinfektion besser einordnen zu können, lohnt sich ein Vergleich mit den gängigen Alternativen. Jede Methode hat ihre Berechtigung, doch die Unterschiede sind erheblich.</p>
+
+                <h3 class="reveal">Chlor &ndash; Der Klassiker</h3>
+                <p class="reveal">Chlor ist das am weitesten verbreitete Desinfektionsmittel für Whirlpools und Pools. Es wirkt zuverlässig gegen die meisten Keime und bietet eine sogenannte Depotwirkung &ndash; es bleibt im Wasser aktiv und kann auch nach der Zugabe noch nachlaufende Verunreinigungen neutralisieren. Allerdings hat Chlor deutliche Nachteile: Es reizt Haut, Augen und Schleimhäute, erzeugt den typischen unangenehmen Geruch (der eigentlich von Chloraminen stammt, die bei der Reaktion mit organischen Stoffen entstehen) und muss regelmäßig nachdosiert werden. Der pH-Wert muss zudem ständig überwacht werden.</p>
+
+                <h3 class="reveal">Brom &ndash; Die sanftere Alternative</h3>
+                <p class="reveal">Brom ist in warmem Wasser stabiler als Chlor und reizt die Haut etwas weniger. Es ist geruchsärmer und funktioniert über einen breiteren pH-Bereich. Allerdings ist Brom teurer als Chlor, löst sich langsamer auf und bietet ebenfalls nicht die Möglichkeit, den Chemikalieneinsatz grundlegend zu reduzieren. Viele Whirlpool-Besitzer empfinden auch Brom als nicht optimal für ein echtes Wellness-Erlebnis.</p>
+
+                <h3 class="reveal">Ozon &ndash; Gute Ergänzung, aber mit Grenzen</h3>
+                <p class="reveal">Ozon ist ein starkes Oxidationsmittel, das Keime effektiv abtötet. Ozon-Generatoren (Ozonisatoren) werden in manchen Whirlpools verbaut und reduzieren den Chemikalienbedarf deutlich. Der Nachteil: Ozon hat keine Depotwirkung im Wasser, da es sehr schnell zerfällt. Außerdem ist Ozon in hoher Konzentration gesundheitsschädlich und muss sorgfältig dosiert werden. Die Geräte verbrauchen zudem mehr Strom als UV-C Systeme.</p>
+
+                <h3 class="reveal">UV-C &ndash; Die moderne Lösung</h3>
+                <p class="reveal">UV-C Desinfektion kombiniert die Vorteile physikalischer Wasseraufbereitung mit minimalem Wartungsaufwand. Es werden keine Chemikalien ins Wasser eingebracht, es entstehen keine Nebenprodukte und das System arbeitet automatisch. Die Desinfektion findet direkt im Leitungssystem statt &ndash; leise, unsichtbar und hochwirksam. Der Energieverbrauch einer UV-C Lampe ist gering, und die laufenden Kosten beschränken sich im Wesentlichen auf den turnusmäßigen Lampenwechsel.</p>
+
+                <div class="info-box reveal">
+                    <div class="info-box-title">&#9878;&#65039; Vergleich auf einen Blick</div>
+                    <ul>
+                        <li><strong>Chlor:</strong> Günstig, breite Verfügbarkeit, aber Hautreizung, Geruch, häufige Dosierung nötig</li>
+                        <li><strong>Brom:</strong> Sanfter als Chlor, aber teurer und keine grundlegende Chemiereduktion</li>
+                        <li><strong>Ozon:</strong> Starke Desinfektion, keine Depotwirkung, höherer Stromverbrauch</li>
+                        <li><strong>UV-C:</strong> Keine Chemie im Wasser, über 99,9 % Keimreduktion, wartungsarm, energiesparend</li>
+                    </ul>
+                </div>
+
+                <h2 class="reveal">Die Vorteile der UV-C Desinfektion</h2>
+                <p class="reveal">Wer einmal die UV-C Technologie im eigenen Whirlpool erlebt hat, möchte sie nicht mehr missen. Die Vorteile sind vielfältig und betreffen sowohl den Komfort als auch die Gesundheit und den Geldbeutel:</p>
+                <ul class="reveal">
+                    <li><strong>Drastisch weniger Chemikalien:</strong> Sie benötigen bis zu 80 % weniger Chlor oder Brom. Das Wasser fühlt sich weicher und angenehmer an.</li>
+                    <li><strong>Keine Hautreizungen:</strong> Weniger Chemie bedeutet weniger Reizungen für Haut, Augen und Atemwege. Ideal für Familien mit Kindern oder Menschen mit empfindlicher Haut.</li>
+                    <li><strong>Kein Chlorgeruch:</strong> Der typische "Schwimmbadgeruch" gehört der Vergangenheit an. Ihr Wellness-Erlebnis wird nicht durch chemische Gerüche beeinträchtigt.</li>
+                    <li><strong>Umweltfreundlich:</strong> Weniger Chemikalien im Wasser bedeuten weniger Belastung für die Umwelt beim Wasserwechsel.</li>
+                    <li><strong>Automatischer Betrieb:</strong> Das UV-C System arbeitet selbstständig, sobald die Zirkulationspumpe läuft. Kein manuelles Dosieren, kein Messen, kein Nachfüllen.</li>
+                    <li><strong>Kostenersparnis:</strong> Die reduzierten Ausgaben für Wasserchemie summieren sich über die Jahre zu einer beachtlichen Ersparnis.</li>
+                </ul>
+
+                <h2 class="reveal">Wie UV-C in den Whirlpool integriert wird</h2>
+                <p class="reveal">Das UV-C Desinfektionssystem ist direkt in den Wasserkreislauf des Whirlpools eingebunden. Im Setho 505 funktioniert das folgendermaßen: Die Zirkulationspumpe (0,35 PS) fördert das Wasser kontinuierlich durch das Filtersystem und anschließend an der UV-C Kammer vorbei. Das Wasser passiert die Kammer, wird dort dem UV-C Licht ausgesetzt und fließt desinfiziert zurück in die Wanne.</p>
+                <p class="reveal">Dieser Kreislauf läuft mehrmals täglich automatisch ab, gesteuert durch die intelligente Gecko YE-5-CE Steuerung mit dem k1001 WLAN Touchdisplay. So wird das gesamte Wasservolumen von 1.100 Litern regelmäßig und gründlich desinfiziert. Die UV-C Kammer ist so dimensioniert, dass das Wasser ausreichend lange dem Licht ausgesetzt wird, um eine zuverlässige Keimreduktion zu gewährleisten.</p>
+
+                <div class="info-box reveal">
+                    <div class="info-box-title">&#128161; Wichtig zu verstehen</div>
+                    <p>UV-C Desinfektion wirkt nur in dem Moment, in dem das Wasser an der Lampe vorbeifließt. Im Gegensatz zu Chlor oder Brom gibt es keine Depotwirkung im Wasserkörper. Deshalb ersetzt UV-C die chemische Desinfektion nicht vollständig &ndash; eine minimale Grunddesinfektion mit Chlor oder Brom bleibt sinnvoll. Allerdings reduziert UV-C die benötigte Menge so drastisch, dass die Chemie kaum noch wahrnehmbar ist.</p>
+                </div>
+
+                <h2 class="reveal">Ersetzt UV-C alle Chemikalien?</h2>
+                <p class="reveal">Diese Frage hören wir häufig, und die ehrliche Antwort lautet: Nein, nicht vollständig &ndash; aber fast. UV-C Desinfektion eliminiert die allermeisten Keime zuverlässig, solange das Wasser die UV-C Kammer passiert. Allerdings gibt es Bereiche im Whirlpool, die das Wasser nicht ständig durchströmt: Oberflächenfilm, Bereiche an der Wasserlinie und schwer zugängliche Ecken. Hier brauchen Sie weiterhin eine minimale chemische Grunddesinfektion.</p>
+                <p class="reveal">In der Praxis bedeutet das: Statt wöchentlich größere Mengen Chlor oder Brom zu dosieren, reicht eine sehr geringe Erhaltungsdosis aus. Viele Nutzer berichten, dass sie den Chemikalieneinsatz um 70 bis 80 Prozent senken konnten. Das Wasser fühlt sich deutlich natürlicher an, die Haut ist nach dem Baden nicht mehr trocken und der unangenehme Geruch verschwindet komplett.</p>
+                <p class="reveal">Zusätzlich zur Grunddesinfektion sollten Sie weiterhin den pH-Wert regelmäßig kontrollieren (ideal: 7,2-7,6) und bei Bedarf anpassen. Auch eine regelmäßige Stoßbehandlung alle paar Wochen bleibt empfehlenswert, um Biofilme zu verhindern.</p>
+
+                <h2 class="reveal">Wartung der UV-C Lampe</h2>
+                <p class="reveal">Ein großer Vorteil der UV-C Technologie ist der geringe Wartungsaufwand. Die UV-C Lampe selbst hat eine begrenzte Lebensdauer, die typischerweise zwischen 8.000 und 12.000 Betriebsstunden liegt. Das entspricht bei normaler Nutzung einem Wechselintervall von etwa 12 bis 18 Monaten.</p>
+                <p class="reveal">Der Lampenwechsel ist in der Regel unkompliziert und kann vom Besitzer selbst durchgeführt werden. Die Lampe wird einfach herausgezogen und durch eine neue ersetzt. Die Kosten für eine Ersatzlampe liegen deutlich unter dem, was Sie an Chemikalien einsparen. Achten Sie beim Kauf darauf, eine Lampe mit der korrekten Wattzahl und Passform für Ihr Modell zu verwenden.</p>
+                <ul class="reveal">
+                    <li><strong>Lampenwechsel:</strong> Alle 12-18 Monate (je nach Betriebsstunden)</li>
+                    <li><strong>Quarzhülse reinigen:</strong> Alle 3-4 Monate die Quarzhülse von Kalkablagerungen befreien</li>
+                    <li><strong>Dichtungen prüfen:</strong> Beim Lampenwechsel die O-Ring-Dichtungen kontrollieren und ggf. tauschen</li>
+                    <li><strong>Funktionskontrolle:</strong> Die Steuerung zeigt in der Regel den Status der UV-C Lampe an</li>
+                </ul>
+
+                <h2 class="reveal">Tipps für optimale Wasserqualität mit UV-C</h2>
+                <p class="reveal">Um das Maximum aus Ihrer UV-C Desinfektion herauszuholen, beachten Sie diese praxiserprobten Empfehlungen:</p>
+                <ul class="reveal">
+                    <li><strong>Filter regelmäßig reinigen:</strong> Saubere Filter sorgen dafür, dass das Wasser ungehindert durch die UV-C Kammer fließen kann. Spülen Sie die Filter wöchentlich und reinigen Sie sie monatlich mit einem Filterreiniger.</li>
+                    <li><strong>Zirkulationszyklen beibehalten:</strong> Die automatischen Filtrations- und Zirkulationszyklen sind essenziell. Verkürzen Sie diese nicht, um Strom zu sparen &ndash; die UV-C Desinfektion funktioniert nur, wenn Wasser fließt.</li>
+                    <li><strong>pH-Wert kontrollieren:</strong> Auch mit UV-C bleibt der pH-Wert entscheidend für die Wasserqualität und den Komfort. Testen Sie zwei- bis dreimal pro Woche.</li>
+                    <li><strong>Minimale Grunddesinfektion:</strong> Halten Sie einen niedrigen Chlor- oder Bromspiegel von 0,5-1,0 ppm aufrecht. Das reicht als Depotdesinfektion für die Bereiche, die UV-C nicht direkt erreicht.</li>
+                    <li><strong>Vor dem Baden duschen:</strong> Hautcremes, Sonnenschutzmittel und Körperöle belasten das Wasser und bilden Biofilme. Eine kurze Dusche vor der Nutzung reduziert den Aufwand für die Wasserpflege erheblich.</li>
+                    <li><strong>Wasserwechsel einhalten:</strong> Trotz UV-C sollte das Wasser alle 3-4 Monate komplett gewechselt werden. Gelöste Mineralien und Rückstände lassen sich nicht durch UV-C entfernen.</li>
+                </ul>
+
+                <div class="info-box reveal">
+                    <div class="info-box-title">&#10024; Unser Fazit</div>
+                    <p>UV-C Desinfektion ist eine der sinnvollsten Technologien, die ein moderner Whirlpool bieten kann. Sie verbessert die Wasserqualität spürbar, reduziert den Chemikalieneinsatz um bis zu 80 % und sorgt für ein angenehmeres Badeerlebnis. Der Setho 505 integriert diese Technologie nahtlos in sein fortschrittliches Wasserpflegesystem &ndash; für kristallklares, hautschonendes Wasser mit minimalem Aufwand.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container reveal">
+            <h2>Kristallklares Wasser mit <span class="gold">UV-C Technologie</span></h2>
+            <p>Erleben Sie den Setho 505 &ndash; mit integrierter UV-C Desinfektion für reineres Wasser und weniger Chemie.</p>
+            <a href="produkt.html" class="cta-btn">Setho 505 entdecken</a>
+            <a href="index.html#kontakt" class="cta-btn-secondary">Persönliche Beratung &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section class="related-articles">
+        <div class="container">
+            <h2 class="reveal">Weitere Artikel</h2>
+            <div class="related-grid">
+                <a href="blog-wasserpflege.html" class="related-card reveal">
+                    <div class="related-card-category">Wasserpflege</div>
+                    <h3>Whirlpool-Wasserpflege: Der komplette Leitfaden</h3>
+                    <p>Alles über pH-Wert, Desinfektion, Filterpflege und Wasserwechsel &ndash; einfach und verständlich erklärt.</p>
+                    <div class="related-card-link">Weiterlesen &rarr;</div>
+                </a>
+                <a href="blog-gesundheit.html" class="related-card reveal">
+                    <div class="related-card-category">Gesundheit</div>
+                    <h3>Whirlpool und Gesundheit: Die nachgewiesenen Vorteile</h3>
+                    <p>Wie regelmäßige Whirlpool-Nutzung Muskeln, Gelenke und das allgemeine Wohlbefinden positiv beeinflusst.</p>
+                    <div class="related-card-link">Weiterlesen &rarr;</div>
+                </a>
+                <a href="blog-isolierung.html" class="related-card reveal">
+                    <div class="related-card-category">Technik</div>
+                    <h3>Whirlpool-Isolierung: Warum sie so wichtig ist</h3>
+                    <p>Erfahren Sie, wie die richtige Isolierung Ihre Betriebskosten um mehrere hundert Euro pro Jahr senken kann.</p>
+                    <div class="related-card-link">Weiterlesen &rarr;</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">Ocean <span>Spa</span></div>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="widerrufsbelehrung.html">Widerrufsbelehrung</a></li>
+                    <li><a href="agb.html">AGB</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="index.html#kontakt">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 Ocean Spa Whirlpools. Alle Rechte vorbehalten.</span>
+                <span>Setho 505 &ndash; Luxus ohne Kompromisse</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navEl = document.querySelector('.nav');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            navEl.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                navEl.classList.remove('menu-open');
+            });
+        });
+
+        // Nav Scroll Effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        if (window.scrollY > 60) nav.classList.add('scrolled');
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+    <script src="cookie-banner.js"></script>
+</body>
+</html>

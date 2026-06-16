@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whirlpool aufstellen: Was Sie vorher wissen müssen | Ocean Spa</title>
+    <meta name="description" content="Von der Standortwahl bis zum Stromanschluss: Alles, was Sie vor der Aufstellung Ihres Whirlpools beachten sollten.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/bpi0zni.css">
+    <style>
+        :root {
+            --accent: #5BA8A2;
+            --accent-light: #C0E3E0;
+            --dark: #1A1A2E;
+            --dark-soft: #2D2D44;
+            --white: #FFFFFF;
+            --off-white: #F7F8FA;
+            --gray: #9CA3AF;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --gradient-accent: linear-gradient(135deg, #5BA8A2 0%, #C0E3E0 50%, #5BA8A2 100%);
+            --gradient-soft: linear-gradient(180deg, #F7F8FA 0%, #ECEEF1 100%);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Navigation ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            padding-top: calc(20px + env(safe-area-inset-top, 0px));
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav.menu-open {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            padding-top: calc(12px + env(safe-area-inset-top, 0px));
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo-icon {
+            height: 44px;
+            width: auto;
+        }
+        .nav-logo-icon.color { display: none; }
+        .nav-logo-icon.white { display: block; }
+        
+        .nav-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+        .nav-logo-text span {
+            color: var(--accent);
+        }
+
+
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            transition: transform 0.3s, box-shadow 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-accent);
+            background: var(--accent-dark);
+            color: var(--white) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ── Article Hero ── */
+        .article-hero {
+            background: var(--off-white);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(91, 168, 162, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .article-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(91, 168, 162, 0.3), transparent);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover { color: var(--accent); }
+        .breadcrumb span { color: var(--gray); }
+        .breadcrumb .current { color: var(--text-secondary); }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(91, 168, 162, 0.15);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(91, 168, 162, 0.2);
+        }
+
+        .article-hero h1 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: clamp(32px, 5vw, 52px);
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            max-width: 800px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .article-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .article-meta-item svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .article-intro {
+            color: var(--text-secondary);
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+
+        /* ── Article Body ── */
+        .article-body {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .article-body h2 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 28px;
+            color: var(--text-primary);
+            margin: 48px 0 20px;
+            line-height: 1.3;
+        }
+
+        .article-body h2:first-child { margin-top: 0; }
+
+        .article-body h3 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 22px;
+            color: var(--text-primary);
+            margin: 36px 0 16px;
+            line-height: 1.4;
+        }
+
+        .article-body p {
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .article-body ul, .article-body ol {
+            color: var(--text-secondary);
+            font-size: 16.5px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+
+        .article-body li { margin-bottom: 8px; }
+
+        .article-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: var(--off-white);
+            border-left: 4px solid var(--accent);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 32px 0;
+        }
+
+        .info-box.tip {
+            background: rgba(91, 168, 162, 0.08);
+            border-left-color: var(--accent);
+        }
+
+        .info-box.warning {
+            background: #FFF8F0;
+            border-left-color: #E8913A;
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ── CTA Banner ── */
+        .cta-banner {
+            background: var(--off-white);
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+            margin: 60px auto;
+            max-width: 780px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(91, 168, 162, 0.1) 0%, transparent 60%);
+        }
+
+        .cta-banner h3 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 28px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .cta-banner p {
+            color: var(--gray);
+            font-size: 16px;
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(91,168,162,0.3);
+            background: var(--accent-dark);
+        }
+
+        /* ── Related Articles ── */
+        .related-section {
+            background: var(--off-white);
+            padding: 80px 0;
+        }
+
+        .related-section h2 {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--text-primary);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .related-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .related-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-card-img {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        .related-card-img img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+        }
+
+
+        .related-card-body { padding: 24px; }
+
+        .related-card-category {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
+        .related-card-title {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 18px;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .related-card-excerpt {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--off-white);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--gray-light);
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-logo img {
+            height: 36px;
+            width: auto;
+        }
+        .footer-logo-text {
+            font-family: 'all-round-gothic', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .footer-logo-text span { color: var(--accent); }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 0;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom span {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* ── Scroll Reveal ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray-light);
+            }
+            .mobile-toggle { display: flex; }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .article-hero { padding: 130px 0 60px; }
+
+            .cta-banner {
+                padding: 36px 24px;
+                margin: 40px 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .article-body { padding: 40px 20px 60px; }
+            .article-body h2 { font-size: 24px; }
+            .article-body h3 { font-size: 20px; }
+            .info-box { padding: 20px; }
+            .article-meta { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><div class="nav-logo-text">Ocean <span>Spa</span></div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="produkt.html">Setho 505</a></li>
+                    <li><a href="blog.html" style="color:var(--accent)">Ratgeber</a></li>
+                    <li><a href="index.html#kundenstimmen">Kundenstimmen</a></li>
+                    <li><a href="index.html#kontakt" class="nav-cta">Beratung anfragen</a></li>
+                </ul>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Hero -->
+    <section class="article-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="blog.html">Ratgeber</a>
+                <span>/</span>
+                <span class="current">Aufstellung</span>
+            </div>
+            <div class="article-category">Aufstellung</div>
+            <h1>Whirlpool aufstellen: Was Sie vorher wissen müssen</h1>
+            <div class="article-meta">
+                <div class="article-meta-item">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    8. Januar 2025
+                </div>
+                <div class="article-meta-item">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    6 Min. Lesezeit
+                </div>
+                <div class="article-meta-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    Aufstellung
+                </div>
+            </div>
+            <p class="article-intro">
+                Die richtige Planung vor der Aufstellung entscheidet über jahrelangen Whirlpool-Genuss. Von der Tragfähigkeit des Untergrunds bis zum Stromanschluss &ndash; dieser Leitfaden begleitet Sie durch jeden Planungsschritt.
+            </p>
+        </div>
+    </section>
+
+    <!-- Article Body -->
+    <article class="article-body">
+
+        <h2 class="reveal">Die Planung beginnt vor dem Kauf</h2>
+        <p class="reveal">Ein Whirlpool ist keine spontane Anschaffung, die man einfach irgendwo hinstellt. Bevor Sie sich für ein Modell entscheiden, sollten Sie den geplanten Aufstellort sorgfältig prüfen. Denn nachträgliche Änderungen am Untergrund, an der Elektrik oder am Zugangsweg sind nicht nur aufwendig, sondern auch kostspielig. Mit der richtigen Vorbereitung wird die Aufstellung hingegen unkompliziert und Sie können Ihren Whirlpool vom ersten Tag an unbeschwert genießen.</p>
+
+        <h2 class="reveal">Untergrund: Tragfähigkeit ist entscheidend</h2>
+        <p class="reveal">Der Untergrund muss das Gesamtgewicht des befüllten Whirlpools einschließlich der Badenden sicher tragen. Das klingt selbstverständlich, wird aber häufig unterschätzt. Ein Whirlpool wie der Setho 505 wiegt leer bereits 410 kg. Mit seinen 1.100 Litern Wasser und zwei bis drei Personen kommen Sie schnell auf ein Gesamtgewicht von <strong>rund 1.700 bis 1.800 kg</strong> &ndash; verteilt auf eine Grundfläche von 220 x 220 cm.</p>
+        <p class="reveal">Daraus ergeben sich folgende Anforderungen an den Untergrund:</p>
+        <ul class="reveal">
+            <li><strong>Betonplatte:</strong> Der ideale Untergrund. Eine mindestens 10 cm dicke, armierte Betonplatte trägt das Gewicht zuverlässig. Bei Neubauten lassen Sie die Platte direkt auf das Whirlpool-Maß gießen.</li>
+            <li><strong>Gepflasterte Terrasse:</strong> Grundsätzlich geeignet, wenn das Pflaster auf einem verdichteten Schotterbett und einer stabilen Unterlage liegt. Bei einfachem Sandbett kann es zu Absenkungen kommen.</li>
+            <li><strong>Holzterrasse / Deck:</strong> Nur bei entsprechender statischer Auslegung möglich. Die meisten Standard-Holzterrassen sind für diese Punktlasten nicht konzipiert. Lassen Sie die Tragfähigkeit unbedingt von einem Statiker prüfen.</li>
+            <li><strong>Rasen / Naturboden:</strong> Nicht direkt geeignet. Der Boden gibt mit der Zeit nach und der Whirlpool steht schief. Hier muss zuerst ein Fundament erstellt werden.</li>
+        </ul>
+
+        <div class="info-box reveal">
+            <div class="info-box-title">&#128207; Setho 505 Gewichtsdaten</div>
+            <p>Leergewicht: 410 kg | Betriebsgewicht (befüllt): 1.510 kg | Fassungsvermögen: 1.100 Liter | Grundfläche: 220 x 220 cm. Die Punktlast beträgt also etwa 312 kg pro Quadratmeter &ndash; das entspricht ungefähr dem Gewicht eines vollständig eingerichteten Büros.</p>
+        </div>
+
+        <p class="reveal">Unabhängig vom Untergrundtyp gilt: Die Fläche muss <strong>absolut eben</strong> sein. Bereits eine Neigung von wenigen Millimetern führt dazu, dass der Wasserstand sichtbar ungleichmäßig ist. Verwenden Sie eine Wasserwaage, um die Ebenheit zu prüfen. Unebenheiten bis 5 mm können mit speziellen Whirlpool-Unterlegpads ausgeglichen werden. Größere Abweichungen erfordern eine Nachbearbeitung des Untergrunds.</p>
+
+        <h2 class="reveal">Stromanschluss: 230V oder 380V?</h2>
+        <p class="reveal">Die Elektrik ist einer der wichtigsten Planungspunkte und sollte ausschließlich von einem zertifizierten Elektriker ausgeführt werden. Der Setho 505 kann wahlweise mit 230 Volt oder 380 Volt betrieben werden. Beide Varianten haben ihre Berechtigung:</p>
+        <ul class="reveal">
+            <li><strong>230V-Anschluss:</strong> Der Standard-Hausstrom. Einfacher zu realisieren, da in vielen Fällen eine vorhandene Außensteckdose genutzt werden kann &ndash; sofern die Leitung entsprechend abgesichert ist. Bei 230V werden Heizung und Pumpen nicht gleichzeitig betrieben, was die Aufheizzeit verlängert.</li>
+            <li><strong>380V-Drehstrom:</strong> Ermöglicht den gleichzeitigen Betrieb von Heizung und Pumpen. Das Wasser heizt schneller auf und die volle Leistung aller Massagedüsen steht jederzeit zur Verfügung. Ideal für eine komfortable Nutzung, erfordert jedoch eine separate Leitung vom Sicherungskasten.</li>
+        </ul>
+
+        <div class="info-box tip reveal">
+            <div class="info-box-title">&#128161; Empfehlung</div>
+            <p>Wir empfehlen für den Setho 505 grundsätzlich den 380V-Drehstromanschluss. Die Investition in die Elektrik zahlt sich durch kürzere Aufheizzeiten und die volle Nutzung aller drei 3-PS-Pumpen bei gleichzeitigem Heizbetrieb dauerhaft aus. Planen Sie die Leitung frühzeitig mit Ihrem Elektriker, damit sie bei der Lieferung einsatzbereit ist.</p>
+        </div>
+
+        <p class="reveal">Unabhängig von der gewählten Spannung ist ein <strong>Fehlerstromschutzschalter (FI-Schalter / RCD)</strong> mit maximal 30 mA Auslösestrom vorgeschrieben. Die Zuleitung sollte mit einem separaten Sicherungsautomaten abgesichert werden. Der Anschluss muss spritzwassergeschützt sein und darf nicht weiter als die maximal zulässige Kabellänge vom Sicherungskasten entfernt liegen &ndash; Ihr Elektriker berät Sie hier zur konkreten Installation.</p>
+
+        <h2 class="reveal">Wasseranschluss und Drainage</h2>
+        <p class="reveal">Für das Befüllen benötigen Sie lediglich einen normalen Gartenschlauch. Ein fester Wasseranschluss direkt am Whirlpool ist nicht erforderlich. Planen Sie für die Erstbefüllung des 1.100-Liter-Beckens je nach Wasserdruck etwa 30 bis 60 Minuten ein.</p>
+        <p class="reveal">Wichtiger als der Zufluss ist der Abfluss. Beim regelmäßigen Wasserwechsel (alle 3 bis 4 Monate) müssen rund 1.100 Liter abgelassen werden. Ideal ist ein Bodenablauf oder ein Gefälle, das das Wasser vom Aufstellort wegführt &ndash; zum Beispiel in einen Gully, eine Drainage oder auf eine Rasenfläche. Der Setho 505 verfügt über einen integrierten Ablasshahn, an den Sie einen Gartenschlauch anschließen können.</p>
+
+        <div class="info-box warning reveal">
+            <div class="info-box-title">&#9888;&#65039; Wichtig</div>
+            <p>Stauendes Wasser unter oder neben dem Whirlpool kann langfristig den Untergrund beschädigen und im Winter zu Frostschäden führen. Stellen Sie sicher, dass Spritzwasser und Ablasswasser zuverlässig abgeführt werden. Ein minimales Gefälle von 1 bis 2 % vom Whirlpool weg genügt.</p>
+        </div>
+
+        <h2 class="reveal">Zugang für die Lieferung</h2>
+        <p class="reveal">Ein Aspekt, der in der Planung häufig vergessen wird: Wie kommt der Whirlpool an seinen Aufstellort? Der Setho 505 hat Außenmaße von 220 x 220 x 90 cm und wiegt 410 kg. Das bedeutet konkret:</p>
+        <ul class="reveal">
+            <li>Jede Durchfahrt, jedes Gartentor und jeder Durchgang muss mindestens <strong>230 cm breit</strong> sein (220 cm Whirlpool plus Spielraum zum Manövrieren).</li>
+            <li>Die Wege müssen befahrbar oder begehbar für das Lieferteam mit Transportrollen oder einem Hubwagen sein.</li>
+            <li>Stufen und enge Kurven stellen besondere Herausforderungen dar. Messen Sie den gesamten Transportweg vom Lieferfahrzeug bis zum Aufstellort genau aus.</li>
+            <li>Wenn der Zugang zu eng ist, kann ein Kran-Einsatz notwendig werden. Das ist problemlos möglich, sollte aber frühzeitig organisiert werden.</li>
+        </ul>
+
+        <div class="info-box tip reveal">
+            <div class="info-box-title">&#128161; Vor der Lieferung</div>
+            <p>Fotografieren Sie den geplanten Transportweg und senden Sie die Bilder zusammen mit den Maßen an unser Team. Wir prüfen die Zugänglichkeit vorab und organisieren bei Bedarf einen Kran-Service. So gibt es am Liefertag keine Überraschungen.</p>
+        </div>
+
+        <h2 class="reveal">Den perfekten Aufstellort wählen</h2>
+
+        <h3 class="reveal">Garten und Terrasse</h3>
+        <p class="reveal">Die Mehrheit der Whirlpools wird im Außenbereich aufgestellt. Der Garten oder die Terrasse bieten viel Gestaltungsspielraum und den Genuss unter freiem Himmel. Beachten Sie bei der Standortwahl folgende Faktoren:</p>
+        <ul class="reveal">
+            <li><strong>Privatsphäre:</strong> Wählen Sie einen Standort, der nicht direkt von Nachbargrundstücken oder öffentlichen Wegen einsehbar ist. Sichtschutzwände, Hecken oder Pergolen schaffen Abhilfe.</li>
+            <li><strong>Windschutz:</strong> Offene, windexponierte Standorte kühlen das Wasser schneller ab und erhöhen den Energieverbrauch. Ein natürlicher Windschutz durch Gebäude, Mauern oder dichte Bepflanzung ist ideal.</li>
+            <li><strong>Sonne und Schatten:</strong> Ein halbschattiger Platz ist optimal. Direkte Sonneneinstrahlung über viele Stunden kann die Abdeckung des Whirlpools vorzeitig altern lassen.</li>
+            <li><strong>Entfernung zum Haus:</strong> Je näher am Haus, desto kürzer die Elektro-Leitung und desto komfortabler der Zugang &ndash; besonders in den kühleren Monaten.</li>
+        </ul>
+
+        <h3 class="reveal">Indoor-Aufstellung</h3>
+        <p class="reveal">Auch die Aufstellung in einem Innenraum ist möglich &ndash; erfordert aber besondere Planung. Die Raumhöhe sollte mindestens 240 cm betragen, um ein angenehmes Raumgefühl zu gewährleisten. Entscheidend ist eine professionelle <strong>Be- und Entlüftung</strong>: Die Verdunstung des warmen Wassers erzeugt erhebliche Luftfeuchtigkeit, die ohne ausreichende Belüftung zu Schimmelbildung und Bauschäden führt. Eine Lüftungsanlage oder zumindest große Fenster, die regelmäßig geöffnet werden, sind unverzichtbar.</p>
+        <p class="reveal">Zusätzlich muss der Fußboden feuchtigkeitsbeständig und wasserresistent sein (Fliesen, Naturstein). Ein Bodenablauf im Raum erleichtert den Wasserwechsel und fängt Spritzwasser auf. Prüfen Sie auch hier die Tragfähigkeit der Deckenkonstruktion, falls der Whirlpool in einem Obergeschoss aufgestellt werden soll.</p>
+
+        <h2 class="reveal">Überdachung: Schutz und Komfort</h2>
+        <p class="reveal">Eine Überdachung oder Pergola über dem Whirlpool bietet zahlreiche Vorteile: Schutz vor Regen, Laub und Schnee, reduzierte Verdunstung und damit geringerer Energieverbrauch, sowie die Möglichkeit, den Whirlpool bei jedem Wetter komfortabel zu nutzen. Von der einfachen Markise bis zum vollwertigen Pavillon gibt es zahlreiche Möglichkeiten, die sich in das Gesamtbild Ihres Gartens einfügen.</p>
+
+        <h2 class="reveal">Nachbarn und Lärm: Rücksicht nehmen</h2>
+        <p class="reveal">Moderne Whirlpools wie der Setho 505 sind dank fortschrittlicher Isolierung und gedämpfter Pumpen deutlich leiser als ältere Modelle. Die ECO-Pro 4-fach-Isolierung des Setho 505 wirkt nicht nur wärmedämmend, sondern auch schalldämpfend. Dennoch erzeugen die Pumpen bei voller Leistung ein hörbares Betriebsgeräusch.</p>
+        <p class="reveal">Platzieren Sie den Whirlpool daher nicht direkt an der Grundstücksgrenze zum Schlafzimmerfenster Ihrer Nachbarn. Ein Abstand von mindestens 3 bis 5 Metern zur nächsten Nachbarbebauung ist empfehlenswert. Informieren Sie Ihre Nachbarn vorab über Ihre Pläne &ndash; das schafft Verständnis und beugt Konflikten vor. Beachten Sie zudem die Ruhezeiten in Ihrer Gemeinde.</p>
+
+        <h2 class="reveal">Checkliste: Alles auf einen Blick</h2>
+        <ul class="reveal">
+            <li>Tragfähiger, ebener Untergrund vorbereitet</li>
+            <li>Stromanschluss (230V oder 380V) durch Elektriker installiert</li>
+            <li>FI-Schutzschalter vorhanden</li>
+            <li>Transportweg ausgemessen (min. 230 cm Breite)</li>
+            <li>Drainage / Wasserabfluss sichergestellt</li>
+            <li>Gartenschlauch für Befüllung verfügbar</li>
+            <li>Sichtschutz und Windschutz bedacht</li>
+            <li>Nachbarn informiert</li>
+            <li>Bei Indoor-Aufstellung: Belüftung und wasserfester Boden</li>
+        </ul>
+
+    </article>
+
+    <!-- CTA Banner -->
+    <div class="container">
+        <div class="cta-banner reveal">
+            <h3>Individuelle Aufstellberatung</h3>
+            <p>Unser Team berät Sie kostenlos zu Aufstellort, Stromanschluss und Lieferung Ihres Setho 505.</p>
+            <a href="index.html#kontakt" class="cta-button">Kostenlose Beratung anfragen &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Related Articles -->
+    <section class="related-section">
+        <div class="container">
+            <h2 class="reveal">Weitere Ratgeber-Artikel</h2>
+            <div class="related-grid">
+                <a href="blog-wasserpflege.html" class="related-card reveal">
+                    <div class="related-card-img"><img src="images/blog-wasserpflege.jpg" alt="Wasserpflege" loading="lazy"></div>
+                    <div class="related-card-body">
+                        <div class="related-card-category">Wasserpflege</div>
+                        <div class="related-card-title">Der ultimative Leitfaden zur Whirlpool-Wasserpflege</div>
+                        <div class="related-card-excerpt">pH-Wert, Desinfektion, Filterreinigung &ndash; alles für kristallklares Wasser.</div>
+                    </div>
+                </a>
+                <a href="blog-gecko-vs-balboa.html" class="related-card reveal">
+                    <div class="related-card-img"><img src="images/blog-technik.jpg" alt="Gecko Steuerung" loading="lazy"></div>
+                    <div class="related-card-body">
+                        <div class="related-card-category">Technik</div>
+                        <div class="related-card-title">Gecko vs. Balboa: Welche Steuerung ist besser?</div>
+                        <div class="related-card-excerpt">Zwei Systeme im Vergleich &ndash; und warum wir uns für Gecko entschieden haben.</div>
+                    </div>
+                </a>
+                <a href="blog-gesundheit.html" class="related-card reveal">
+                    <div class="related-card-img"><img src="images/blog-wellness.jpg" alt="Gesundheit und Wellness" loading="lazy"></div>
+                    <div class="related-card-body">
+                        <div class="related-card-category">Wellness</div>
+                        <div class="related-card-title">5 gesundheitliche Vorteile eines Whirlpools</div>
+                        <div class="related-card-excerpt">Stressabbau, besserer Schlaf und mehr &ndash; warum ein Whirlpool gut für Sie ist.</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">Ocean <span>Spa</span></div>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="widerrufsbelehrung.html">Widerrufsbelehrung</a></li>
+                    <li><a href="agb.html">AGB</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="index.html#kontakt">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 Ocean Spa Whirlpools. Alle Rechte vorbehalten.</span>
+                <span>Setho 505 &ndash; Luxus ohne Kompromisse</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        });
+        nav.classList.add('scrolled');
+
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navEl = document.querySelector('.nav');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            navEl.classList.toggle('menu-open');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                navEl.classList.remove('menu-open');
+            });
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+    <script src="cookie-banner.js"></script>
+</body>
+</html>
